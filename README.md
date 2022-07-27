@@ -1,6 +1,8 @@
 # Revature-Project-2
 #### `DO NOT PUSH FROM MAIN`
 #### `PUSH FROM YOUR BRANCH TO AVOID CONFLITS`
+Let's prevent to erase code by pulling from the main and have a Oh, no, Oh no, Oh no, no, no, no instagram moment 🤯 🙃 </br>
+
 
 ## Git branches
 This command will create the branch and take you to the branch automatically </br>
