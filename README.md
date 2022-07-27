@@ -14,12 +14,12 @@ This command will create the branch and take you to the branch automatically </b
 If git push does not work the first time, you need to run `git push --set-upstream origin yourbranchName` as indicated in the fatal error that git will throw in the terminal </br>
 
 
-## Git Pull Request
+## GitHub Pull Requests
 
-If the a new commit does not appear in the github repo, then </br>
-1. Click on `Pull Request` </br>
+If the a new commit does not appear in the github repo automatically, then </br>
+1. Click on `Pull Requests` </br>
 2. Click on `New Pull Request` </br>
-3. In the drop down menu below `Comparing change`, click on `compare:main` drop down menu. The default will be in main. However, it needs to be changed to the branch name you created in git. </br>
+3. In the drop down menu below `Compare change`, click on `compare:main` drop down menu. The default will be in main. However, it needs to be changed to the branch name you created in git. </br>
 4. Click on `Create Pull Request` </br>
 5. Click on `Create Pull Request` again </br>
 6. Click on `Merge pull request` </br>
