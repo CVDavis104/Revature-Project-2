@@ -2,11 +2,11 @@
 ## DO NOT PUSH FROM MAIN
 # PUSH FROM YOUR BRANCH TO AVOID CONFLITS
 
-### `Git branches`
+## Git branches
 ### This command will create the branch and take you to the branch automatically
 `git checkout -b branchName`
 
-### `Git Commands`
+## Git Commands
 `git add .` </br>
 `git commit -m 'some comment'` </br>
 `git push` </br>
@@ -14,7 +14,7 @@
 ### If git push does not work the first time, you need to run git push --set-upstream origin yourbranchName as indicated in the fatal error git will throw in the terminal
 
 
-### `Git Pull Request`
+## Git Pull Request
 
 If the new commit does not show in the github repo, then </br>
 1. Click on `Pull Request` </br>
