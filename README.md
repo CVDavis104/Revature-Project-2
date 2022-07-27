@@ -6,7 +6,7 @@
 This command will create the branch and take you to the branch automatically </br>
 `git checkout -b branchName`
 
-## Git Commands
+## Git Commit
 `git add .` </br>
 `git commit -m 'some comment'` </br>
 `git push` </br>
