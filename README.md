@@ -7,9 +7,9 @@
 git checkout -b branchName
 
 ### `Git Commands`
-git add .
-git commit -m 'some comment'
-git push
+git add . </br>
+git commit -m 'some comment' </br>
+git push </br>
 
 
 
