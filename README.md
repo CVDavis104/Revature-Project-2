@@ -15,8 +15,10 @@ If git push does not work the first time, you need to run `git push --set-upstre
 
 
 ## GitHub Pull Requests
-
+Note: these steps will work fine if the branch being merged does not have any conflits </br>
+</br>
 If the a new commit does not appear in the github repo automatically, then </br>
+
 1. Click on `Pull Requests` </br>
 2. Click on `New Pull Request` </br>
 3. In the drop down menu below `Compare change`, click on `compare:main` drop down menu. The default will be in main. However, it needs to be changed to the branch name you created in git. </br>
