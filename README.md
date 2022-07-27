@@ -17,10 +17,10 @@ git push </br>
 ### `Git Pull Request`
 
 If the new commit does not show in the github repo, then </br>
-1. Click Pull Request </br>
-2. Click New Pull Request </br>
+1. Click on Pull Request </br>
+2. Click on New Pull Request </br>
 3. In the drop down menu below Comparing changes, click compare: drop down menu. The default will be in main. However, it needs to be changed to the branch name you created in git. </br>
-4. Click Create Pull Request </br>
-5. Click Create Pull Request again </br>
-6. Click Merge pull request </br>
-7. On this step DO NOT CONFIRM MERGE </br>
+4. Click on Create `Pull Request` </br>
+5. Click on Create Pull Request again </br>
+6. Click on Merge pull request </br>
+7. On this step DO NOT CLICK ON CONFIRM MERGE </br>
