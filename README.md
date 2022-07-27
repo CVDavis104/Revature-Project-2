@@ -1,9 +1,9 @@
 # Revature-Project-2
-## DO NOT PUSH FROM MAIN
-# PUSH FROM YOUR BRANCH TO AVOID CONFLITS
+#### `DO NOT PUSH FROM MAIN`
+#### `PUSH FROM YOUR BRANCH TO AVOID CONFLITS`
 
 ## Git branches
-### This command will create the branch and take you to the branch automatically
+This command will create the branch and take you to the branch automatically </br>
 `git checkout -b branchName`
 
 ## Git Commands
