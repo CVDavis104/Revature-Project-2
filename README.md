@@ -16,7 +16,7 @@ If git push does not work the first time, you need to run `git push --set-upstre
 
 ## Git Pull Request
 
-If the new commit does not show in the github repo, then </br>
+If the a new commit does not appear in the github repo, then </br>
 1. Click on `Pull Request` </br>
 2. Click on `New Pull Request` </br>
 3. In the drop down menu below `Comparing change`, click on `compare:main` drop down menu. The default will be in main. However, it needs to be changed to the branch name you created in git. </br>
