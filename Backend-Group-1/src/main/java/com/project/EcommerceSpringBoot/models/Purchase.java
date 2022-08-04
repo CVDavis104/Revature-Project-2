@@ -32,4 +32,18 @@ public class Purchase {
     /*No args constructor*/
     public Purchase() {super();}
 
+    public Purchase(int purchase_quantity, boolean checkout, double total_amount, Cart purchases) {
+        this.purchase_quantity = purchase_quantity;
+        this.checkout = checkout;
+        this.total_amount = total_amount;
+        this.purchases = purchases;
+    }
+
+    public Purchase(int purchase_id, int purchase_quantity, boolean checkout, double total_amount, Cart purchases) {
+        this.purchase_id = purchase_id;
+        this.purchase_quantity = purchase_quantity;
+        this.checkout = checkout;
+        this.total_amount = total_amount;
+        this.purchases = purchases;
+    }
 }/*Purchase class ending*/

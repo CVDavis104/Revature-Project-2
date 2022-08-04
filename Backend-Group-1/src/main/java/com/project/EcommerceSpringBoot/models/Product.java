@@ -35,4 +35,20 @@ public class Product {
 
     public Product() {}
 
+    public Product(String product_name, double product_price, String product_description, int product_inventory, Cart cart_products) {
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_inventory = product_inventory;
+        this.cart_products = cart_products;
+    }
+
+    public Product(int product_id, String product_name, double product_price, String product_description, int product_inventory, Cart cart_products) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_inventory = product_inventory;
+        this.cart_products = cart_products;
+    }
 }/*Products class ending*/
