@@ -5,48 +5,71 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-@Data
 @Entity
-@Table(name = "user_t")
-
+@Data
+@Table(name = "e_users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private int user_id;
+    @Column(name = "u_id")
+    private int id;
 
-    @Column(name = "user_name",unique = true,nullable = false)
-    private String user_name;
+    @Column(name = "u_username", unique = true, nullable = false)
+    private String username;
 
-    @Column(name = "pass_word",nullable = false)
-    private String pass_word;
+    @Column(name = "u_password",  nullable = false)
+    private String password;
 
-    @Column(name = "first_name",nullable = false)
-    private String first_name;
+    @Column(name = "u_firstname", nullable = false)
+    private String firstname;
 
-    @Column(name = "last_name",nullable = false)
-    private String last_name;
+    @Column(name = "u_lastname", nullable = false)
+    private String lastname;
 
-    @Column(name = "phone_number",nullable = false)
-    private int phone_number;
-
-    @Column(name = "email",nullable = false)
+    @Column(name = "u_email", nullable = false)
     private String email;
 
-    @Column(name = "address",nullable = false)
+    @Column(name = "u_address")
     private String address;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "user_cart",referencedColumnName = "cart_id")
-    private Cart cart;
+    @Column(name = "u_phonenumber")
+    private String phonenumber;
 
-    @OneToMany(mappedBy = "purchases",fetch = FetchType.LAZY)
-    @Column(name = "user_purchases")
-    private List<Purchase> purchases = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "usercart_id", referencedColumnName = "uc_id")//...pointing to the cart the user makes
+    private UserCart usercartid;
 
-    /*No args constructor*/
-    public User() {super();}
 
-}/*User class ending*/
+    public User() {
+    }
+
+    public User(int id) {
+        this.id = id;
+    }
+
+    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, UserCart usercartid) {
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.usercartid = usercartid;
+    }
+
+    public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber, UserCart usercartid) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.usercartid = usercartid;
+    }
+}
+
