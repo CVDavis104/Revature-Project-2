@@ -38,7 +38,7 @@ public class UserCartServiceImpl implements UserCartService {
 
     @Override
     public int updateUserCart(UserCart userCart) {
-        return ucRepo.update(userCart.getUserid(), userCart.getProductid(),userCart.getProductqty(), userCart.getId());
+        return ucRepo.update(userCart.getUserid(), userCart.getProductid(),userCart.getProductqty(),userCart.getId());
     }
 
     @Override
