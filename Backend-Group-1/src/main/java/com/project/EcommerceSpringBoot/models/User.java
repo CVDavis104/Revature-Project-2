@@ -37,9 +37,9 @@ public class User {
     @Column(name = "u_phonenumber")
     private String phonenumber;
 
-    @OneToOne
-    @JoinColumn(name = "usercart_id", referencedColumnName = "uc_id")//...pointing to the cart the user makes
-    private UserCart usercartid;
+//    @OneToOne
+//    @JoinColumn(name = "usercart_id", referencedColumnName = "uc_id")//...pointing to the cart the user makes
+//    private UserCart usercartid;
 
 
     public User() {
@@ -49,7 +49,7 @@ public class User {
         this.id = id;
     }
 
-    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, UserCart usercartid) {
+    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -57,10 +57,10 @@ public class User {
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
-        this.usercartid = usercartid;
+//        this.usercartid = usercartid;
     }
 
-    public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber, UserCart usercartid) {
+    public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -69,7 +69,12 @@ public class User {
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
-        this.usercartid = usercartid;
+  //      this.usercartid = usercartid;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 }
 

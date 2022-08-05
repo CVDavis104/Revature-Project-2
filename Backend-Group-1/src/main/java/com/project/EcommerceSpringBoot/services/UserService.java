@@ -13,6 +13,8 @@ public interface UserService {
 
     User getUserById(int id);
 
+    User getUserByUser(String username, String password);
+
     List<User> getAllUsers();
 
     int updateUser(User user);

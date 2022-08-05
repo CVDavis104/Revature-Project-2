@@ -26,6 +26,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/userLogin")
+    public @ResponseBody User getByUser(@RequestParam String username, String password) {
+        return userService.getUserByUser(username, password);
+       //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
+    }
+
     @GetMapping("/users")
     public @ResponseBody List<User> getAll(){
         return userService.getAllUsers();
@@ -57,28 +63,25 @@ public class UserController {
 //         "lastname": "Pearcy",
 //         "email": "gpearcy@aol.com",
 //         "address": "7 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-0000",
-//         "usercartid": null
+//         "phonenumber": "281-777-0000"
 //         },
 //         {
 //         "id": 2,
 //         "username": "mpearcy",
 //         "password": "mpearcy",
-//         "firstname": "Mark",
+//         "firstname": "Gerald",
 //         "lastname": "Pearcy",
 //         "email": "mpearcy@aol.com",
 //         "address": "5 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-4444",
-//         "usercartid": null
+//         "phonenumber": "281-777-4444"
 //         },
 //         {
 //         "id": 3,
 //         "username": "cpearcy",
 //         "password": "cpearcy",
-//         "firstname": "Ceceil",
+//         "firstname": "Gerald",
 //         "lastname": "Pearcy",
 //         "email": "cpearcy@aol.com",
 //         "address": "5 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-5555",
-//         "usercartid": null
+//         "phonenumber": "281-777-5555"
 //         }
