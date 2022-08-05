@@ -1,6 +1,8 @@
 package com.project.EcommerceSpringBoot.services;
 
+import com.project.EcommerceSpringBoot.models.User;
 import com.project.EcommerceSpringBoot.models.UserCart;
+import com.project.EcommerceSpringBoot.models.UserPurchases;
 import com.project.EcommerceSpringBoot.repos.UserCartRepo;
 import com.project.EcommerceSpringBoot.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,11 @@ public class UserCartServiceImpl implements UserCartService {
     }
 
     @Override
+    public List<UserCart> getUserCartByUser(User userid) {
+        return ucRepo.findByUser(userid);
+    }
+
+    @Override
     public List<UserCart> getAllUserCarts() {
         return ucRepo.findAll();
     }
@@ -40,6 +47,19 @@ public class UserCartServiceImpl implements UserCartService {
     public int updateUserCart(UserCart userCart) {
         return ucRepo.update(userCart.getUserid(), userCart.getProductid(),userCart.getProductqty(),userCart.getId());
     }
+
+    @Override
+    public int updateUserCartById(UserCart userCart) {
+        return ucRepo.updateById(userCart.getProductqty(),userCart.getId());
+    }
+
+    @Override
+    public int createPurchase(UserCart userCart) {
+        ucRepo.delete(userCart);
+        return ucRepo.insertPurchase(userCart.getUserid(), userCart.getProductid(),userCart.getProductqty());
+
+    }
+
 
     @Override
     public boolean deleteUserCart(UserCart userCart) {

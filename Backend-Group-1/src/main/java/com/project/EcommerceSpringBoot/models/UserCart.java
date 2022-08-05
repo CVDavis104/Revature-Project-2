@@ -43,4 +43,8 @@ public class UserCart {
         this.productid = productid;
         this.productqty = productqty;
     }
+
+    public UserCart(User userid) {
+        this.userid = userid;
+    }
 }

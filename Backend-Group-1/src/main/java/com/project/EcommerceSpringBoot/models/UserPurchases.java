@@ -17,11 +17,15 @@ public class UserPurchases {
     private User userid;//...pointing to the user that is making purchases
 
     @ManyToOne //OneToMany
-    @JoinColumn(name = "uc_product_id",  referencedColumnName = "p_id") //...pointing to the products in this cart
+    @JoinColumn(name = "up_product_id",  referencedColumnName = "p_id") //...pointing to the products in this cart
     private Product productid;
 
+
+    @Column(name = "up_product_qty")
+    private int productqty;
     @Column(name = "up_checkout")
     private boolean checkout;
+
 
     public UserPurchases() {
     }
@@ -30,16 +34,22 @@ public class UserPurchases {
         this.id = id;
     }
 
-    public UserPurchases(User userid, Product productid, boolean checkout) {
+    public UserPurchases(User userid, Product productid, int productqty, boolean checkout) {
         this.userid = userid;
         this.productid = productid;
+        this.productqty = productqty;
         this.checkout = checkout;
     }
 
-    public UserPurchases(int id, User userid, Product productid, boolean checkout) {
+    public UserPurchases(int id, User userid, Product productid, int productqty, boolean checkout) {
         this.id = id;
         this.userid = userid;
         this.productid = productid;
+        this.productqty = productqty;
         this.checkout = checkout;
+    }
+
+    public UserPurchases(User userid) {
+        this.userid = userid;
     }
 }
