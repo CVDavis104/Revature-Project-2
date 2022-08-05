@@ -34,4 +34,8 @@ public class Cart {
         this.cart_id = cart_id;
         this.products = products;
     }
+
+    //Need to add an amount of products column
+
+    //
 }/*Cart class ending*/
