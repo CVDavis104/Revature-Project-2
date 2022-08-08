@@ -6,12 +6,22 @@ loginButton.addEventListener("click", (event) => {
     event.preventDefault(); 
     let xhttp = new XMLHttpRequest();
    
-    let First Name = document.getElementById("First-Name").value;
-    let Last Name = document.getElementById("Last-Name").value;
+    let FirstName = document.getElementById("First-Name").value;
+    let LastName = document.getElementById("Last-Name").value;
+    let MobileNumber=document.getElementById("Mobile-number").value;
+    let AddressLine1=document.getElementById("Address-Line-1").value;
+    let AdressLine2=document.getElementById("Adress-Line-2");
+    let State=document.getElementById("State");
+    let Email=getElementById.getElementById("Email");
     // Here we are creating a "loginInfo" object
-    let loginInfo = {
-        email:username,
-        pass_word:password
+    let profile = {
+        FirstName:FirstName,
+        LastName:LastName,
+        MobileNumber:MobileNumber,
+        AddressLine1:AddressLine1,
+        AdressLine2:AdressLine2,
+        State:State,
+        Email:Email
     }
     console.log(loginInfo);
    
