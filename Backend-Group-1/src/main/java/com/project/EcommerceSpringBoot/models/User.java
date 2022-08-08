@@ -42,6 +42,43 @@ public class User {
 //    private UserCart usercartid;
 
 
+<<<<<<< HEAD
+    public User(String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address) {
+        this.user_name = user_name;
+        this.pass_word = pass_word;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.address = address;
+    }
+
+    public User(String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address, Cart cart, List<Purchase> purchases) {
+        this.user_name = user_name;
+        this.pass_word = pass_word;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.address = address;
+        this.cart = cart;
+        this.purchases = purchases;
+    }
+
+    public User(int user_id, String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address, Cart cart, List<Purchase> purchases) {
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.pass_word = pass_word;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.address = address;
+        this.cart = cart;
+        this.purchases = purchases;
+    }
+}/*User class ending*/
+=======
     public User() {
     }
 
@@ -78,3 +115,4 @@ public class User {
     }
 }
 
+>>>>>>> 109e9e7719156587c4a5401eaa06c81bde4f82d9
