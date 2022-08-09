@@ -1,41 +1,54 @@
 package com.project.EcommerceSpringBoot.models;
-
 import lombok.Data;
 
 import javax.persistence.*;
 
-import lombok.Data;
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
-@Data
 @Entity
+@Data
 @Table(name = "cart_t")
 public class Cart {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")
-    private int cart_id;
+    private int cart_id;//Points to the cart id
 
-    @OneToMany(mappedBy = "cart_products",fetch = FetchType.LAZY)
-    @Column(name = "products")
-    private List<Product> products = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "cart_user_rel", referencedColumnName = "user_id")
+    private User cart_user_rel;//Points to the user who made this cart
 
-    public Cart(){}
+    @ManyToOne
+    @JoinColumn(name = "cart_product_id",  referencedColumnName = "product_id")
+    private Product cart_product_id;//Points to the products in this cart
 
-    public Cart(List<Product> products) {
-        this.products = products;
-    }
+    @Column(name = "product_quantity")
+    private int product_quantity;//Points to the product quantity inside a cart
 
-    public Cart(int cart_id, List<Product> products) {
+    //No arg constructor
+    public Cart() {super();}
+
+    //Cart id constructor
+    public Cart(int cart_id) {
         this.cart_id = cart_id;
-        this.products = products;
-    }
+    }//Cart id constructor ending
 
-    //Need to add an amount of products column
+    //cart_user_rel constructor
+    public Cart(User cart_user_rel) {
+        this.cart_user_rel = cart_user_rel;
+    }//Cart_user_rel constructor ending
 
-    //
+    //Cart most args constructor
+    public Cart(User cart_user_rel, Product cart_product_id, int product_quantity) {
+        this.cart_user_rel = cart_user_rel;
+        this.cart_product_id = cart_product_id;
+        this.product_quantity = product_quantity;
+    }//Cart most args constructor ending
+
+    //Cart all args constructor
+    public Cart(int cart_id, User cart_user_rel, Product cart_product_id, int product_quantity) {
+        this.cart_id = cart_id;
+        this.cart_user_rel = cart_user_rel;
+        this.cart_product_id = cart_product_id;
+        this.product_quantity = product_quantity;
+    }//Cart all args constructor ending
+
 }/*Cart class ending*/

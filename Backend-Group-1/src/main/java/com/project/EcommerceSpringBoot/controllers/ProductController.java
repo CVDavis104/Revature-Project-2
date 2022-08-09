@@ -11,17 +11,16 @@ import java.util.List;
 import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/map")
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
-
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
     @GetMapping("/product")
-    public @ResponseBody Product getById(@RequestParam int id) {
-        return productService.getProductById(id);
+    public @ResponseBody Product getById(@RequestParam int product_id) {
+        return productService.getProductById(product_id);
     }
 
     @GetMapping("/products")
