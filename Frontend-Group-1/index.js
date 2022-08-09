@@ -32,7 +32,7 @@ loginButton.addEventListener("click", (event) => {
             }
         };
        
-        xhttp.open("POST", `http://localhost:8080/Horoscope/user`);
+        xhttp.open("POST", `http://localhost:8080/Revature-Project-2/user`);
         xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhttp.setRequestHeader("Content-Type", "application/json");
         console.log(xhttp);
