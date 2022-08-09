@@ -1,3 +1,5 @@
+// ! This products.js is not being utilized 
+
 let shop = document.getElementById('shop');
 
 let shopItemsData = [{
