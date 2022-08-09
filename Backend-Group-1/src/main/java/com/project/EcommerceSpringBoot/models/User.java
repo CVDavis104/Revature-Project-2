@@ -1,118 +1,82 @@
 package com.project.EcommerceSpringBoot.models;
-
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
+//Checkout
+//Creating user purchase
+//set up services
+//updating user purchases
 @Entity
 @Data
-@Table(name = "e_users")
+@Table(name = "user_t")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "u_id")
-    private int id;
+    @Column(name = "user_id")
+    private int user_id;//Points to the user id
 
-    @Column(name = "u_username", unique = true, nullable = false)
-    private String username;
+    @Column(name = "user_name", unique = true, nullable = false)
+    private String user_name;//Points to the username
 
-    @Column(name = "u_password",  nullable = false)
-    private String password;
+    @Column(name = "pass_word",  nullable = false)
+    private String pass_word;//Points to the password
 
-    @Column(name = "u_firstname", nullable = false)
-    private String firstname;
+    @Column(name = "first_name", nullable = false)
+    private String first_name;//Points to a users first name
 
-    @Column(name = "u_lastname", nullable = false)
-    private String lastname;
+    @Column(name = "last_name", nullable = false)
+    private String last_name;//Points to a users last name
 
-    @Column(name = "u_email", nullable = false)
-    private String email;
+    @Column(name = "email", nullable = false)
+    private String email;//Points to a users email
 
-    @Column(name = "u_address")
-    private String address;
+    @Column(name = "address")
+    private String address;//Points to a users address
 
-    @Column(name = "u_phonenumber")
-    private String phonenumber;
+    @Column(name = "phone_number")
+    private String phone_number;//Points to a users phone number
 
-//    @OneToOne
-//    @JoinColumn(name = "usercart_id", referencedColumnName = "uc_id")//...pointing to the cart the user makes
-//    private UserCart usercartid;
+    @OneToOne
+    @JoinColumn(name = "user_cart_rel", referencedColumnName = "cart_id")//...pointing to the cart the user makes
+    private Cart user_cart_rel;//Points to the user accounts cart id
 
+    //No args constructor
+    public User() {super();}
 
-<<<<<<< HEAD
-    public User(String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address) {
+    //User id constructor
+    public User(int user_id) {
+        this.user_id = user_id;
+    }//User id constructor ending
+
+    //User login constructor
+    public User(String user_name, String pass_word) {
+        this.user_name = user_name;
+        this.pass_word = pass_word;
+    }//User login constructor ending
+
+    //User signup constructor
+    public User(String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number) {
         this.user_name = user_name;
         this.pass_word = pass_word;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.phone_number = phone_number;
         this.email = email;
         this.address = address;
-    }
-
-    public User(String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address, Cart cart, List<Purchase> purchases) {
-        this.user_name = user_name;
-        this.pass_word = pass_word;
-        this.first_name = first_name;
-        this.last_name = last_name;
         this.phone_number = phone_number;
-        this.email = email;
-        this.address = address;
-        this.cart = cart;
-        this.purchases = purchases;
-    }
+    }//User signup constructor ending
 
-    public User(int user_id, String user_name, String pass_word, String first_name, String last_name, int phone_number, String email, String address, Cart cart, List<Purchase> purchases) {
+    //All args constructor
+    public User(int user_id, String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number, Cart user_cart_rel) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.pass_word = pass_word;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.email = email;
+        this.address = address;
         this.phone_number = phone_number;
-        this.email = email;
-        this.address = address;
-        this.cart = cart;
-        this.purchases = purchases;
-    }
+        this.user_cart_rel = user_cart_rel;
+    }//All args constructor ending
+
 }/*User class ending*/
-=======
-    public User() {
-    }
-
-    public User(int id) {
-        this.id = id;
-    }
-
-    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
-        this.username = username;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.address = address;
-        this.phonenumber = phonenumber;
-//        this.usercartid = usercartid;
-    }
-
-    public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.address = address;
-        this.phonenumber = phonenumber;
-  //      this.usercartid = usercartid;
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-}
-
->>>>>>> 109e9e7719156587c4a5401eaa06c81bde4f82d9

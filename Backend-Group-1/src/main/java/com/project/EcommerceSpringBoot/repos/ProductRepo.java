@@ -8,23 +8,21 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Repository
 @Transactional
 public interface ProductRepo extends JpaRepository<Product,Integer> {
     @Modifying
-    @Query(value = "UPDATE products SET p_name=?1, p_price=?2, p_invcount=?3 WHERE p_id=?4", nativeQuery = true)
-    public int update(String name, Double price, int invcount, int id);
+    @Query(value = "UPDATE product_t SET product_name=?1, product_price=?2, product_inventory=?3 WHERE product_id=?4", nativeQuery = true)
+    public int updateProduct(String product_name, double product_price, int product_inventory, int product_id);
 
+    @Modifying
+    @Query(value = "UPDATE product_t SET product_inventory=?1 WHERE product_id=?2", nativeQuery = true)
+    public Product updateProductInventory(int product_inventory, int product_id);
 
-<<<<<<< HEAD
-    //Used to delete from our products table based on product_id
-//    @Query(value = "DELETE * FROM product_t WHERE product_id=?1")
-//    public Integer deleteFromProducts(int product_id);
-
-    //Used to select all products from by product_id
-//    @Query(value = "SELECT * FROM product_t WHERE product_id=?1",nativeQuery = true)
-//    public Product getAllProducts(int product_id);
+    /*this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_inventory = product_inventory;*/
 
     /*The Spring Data module takes this simplification one step
 further by providing standard implementation for common DAO
@@ -52,11 +50,4 @@ Extending the CrudRepository should implement the following CRUD operations for 
      * wildcard (?) with  param numbers that indicate the index of
      * values. Example of update method using @Query*/
 
-
 }/*ProductRepo interface ending*/
-=======
-    @Query(value = "SELECT * FROM products WHERE p_id=?1", nativeQuery = true)
-    public Product findById(int id);
-}
-
->>>>>>> 109e9e7719156587c4a5401eaa06c81bde4f82d9
