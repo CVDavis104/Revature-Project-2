@@ -11,7 +11,7 @@ loginButton.addEventListener("click", (event) => {
     // Here we are creating a "loginInfo" object
     let loginInfo = {
         email:username,
-        pass_word:password
+        password:password
     }
     console.log(loginInfo);
    
@@ -24,7 +24,7 @@ loginButton.addEventListener("click", (event) => {
                 console.log(data);
                 // Global Caching Function
                 localStorage.setItem('currentUser', JSON.stringify(data));
-                window.location.replace("welcome.html")
+                window.location.replace("profile.html")
                 // 204 status is a invalid login
             } else if(this.readyState == 4 && xhttp.status == 204){
                 console.log(xhttp.responseText)

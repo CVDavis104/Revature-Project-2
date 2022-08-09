@@ -1,29 +1,35 @@
 
-let loginButton = document.getElementById("Save Profile");
+let profileButton = document.getElementById("Save Profile");
 
 
-loginButton.addEventListener("click", (event) => {
+saveprofileButton.addEventListener("click", (event) => {
     event.preventDefault(); 
     let xhttp = new XMLHttpRequest();
    
-    let FirstName = document.getElementById("First-Name").value;
-    let LastName = document.getElementById("Last-Name").value;
-    let MobileNumber=document.getElementById("Mobile-number").value;
-    let AddressLine1=document.getElementById("Address-Line-1").value;
-    let AdressLine2=document.getElementById("Adress-Line-2");
-    let State=document.getElementById("State");
-    let Email=getElementById.getElementById("Email");
-    // Here we are creating a "loginInfo" object
+    let firstName = document.getElementById("first-Name-input").value;
+    let lastName = document.getElementById("last-Name-input").value;
+    let mobilenumber=document.getElementById("mobilenumber-input").value;
+    let address=document.getElementById("address-input").value;
+    let State=document.getElementById("State-input");
+    let country=document.getElementById("country-input")
+    let email=getElementById.getElementById("email-input");
+
+
     let profile = {
-        FirstName:FirstName,
-        LastName:LastName,
-        MobileNumber:MobileNumber,
-        AddressLine1:AddressLine1,
-        AdressLine2:AdressLine2,
+        firstName:firstName,
+        lastName:lastName,
+        mobilenumber:mobilenumber,
+        address:address,
         State:State,
-        Email:Email
+        country:country,
+        email:email
     }
-    console.log(loginInfo);
+
+
+
+    console.log(profile);
+
+    //function add(){ firstName + lastName + mobilenumber + address + State + country + email;}
    
         xhttp.onreadystatechange = function(){
             // 200 status is ok
@@ -38,7 +44,7 @@ loginButton.addEventListener("click", (event) => {
                 // 204 status is a invalid login
             } else if(this.readyState == 4 && xhttp.status == 204){
                 console.log(xhttp.responseText)
-                alert("Failed to Login: Status Code -" + xhttp.status)
+                alert("Failed to Save Profile: Status Code -" + xhttp.status)
             }
         };
        
@@ -47,5 +53,5 @@ loginButton.addEventListener("click", (event) => {
         xhttp.setRequestHeader("Content-Type", "application/json");
         console.log(xhttp);
         
-        xhttp.send(JSON.stringify(loginInfo));
+        xhttp.send(JSON.stringify(profileInfo));
 })
