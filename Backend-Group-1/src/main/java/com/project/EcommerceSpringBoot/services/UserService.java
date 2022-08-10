@@ -11,8 +11,12 @@ public interface UserService {
     //Get User by id
     User getUserById(int user_id);
 
+<<<<<<< HEAD
     //Updates a User
     boolean updateUser(User user);
+=======
+    User getUserByUser(String email, String password);
+>>>>>>> markclone
 
     //Deletes a User
     boolean deleteUser(User user);

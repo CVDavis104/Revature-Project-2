@@ -52,4 +52,9 @@ Extending the CrudRepository should implement the following CRUD operations for 
 
 }/*UserRepo interface ending*/
 
+<<<<<<< HEAD
+=======
+    @Query(value = "SELECT * FROM e_users WHERE u_email=?1 AND u_password=?2", nativeQuery = true)
+    public User findByUser(String u_email, String u_password);
+>>>>>>> markclone
 

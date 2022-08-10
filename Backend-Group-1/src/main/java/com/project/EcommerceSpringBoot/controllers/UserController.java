@@ -52,6 +52,7 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
+<<<<<<< HEAD
 
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody User getById(@RequestParam int user_id) {
@@ -81,6 +82,12 @@ public class UserController {
     public @ResponseBody User getByUser(@RequestParam String username, String password) {
         return userService.getUserByUser(username, password);
         //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
+=======
+    @PostMapping("/userLogin")
+    public @ResponseBody User getByUser(@RequestParam String email, String password) {
+        return userService.getUserByUser(email, password);
+        //http://localhost:8080/api/userLogin?email=cpearcy&password=cpearcy
+>>>>>>> markclone
     }
 
     @GetMapping("/users")

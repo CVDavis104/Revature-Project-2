@@ -42,10 +42,27 @@ public class UserServiceImpl implements UserService {
     }//getUserById method ending
 
     @Override
+<<<<<<< HEAD
     public boolean updateUser(User user) {
         int pk = userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
             return (pk > 0) ? true: false;
     }//updateUser method ending
+=======
+    public User getUserByUser(String email, String password) {
+        return uRepo.findByUser(email, password);
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return uRepo.findAll();
+    }
+
+    @Override
+    public int updateUser(User user) {
+        return uRepo.update(user.getUsername(), user.getPassword(), user.getFirstname(), user.getLastname(), user.getEmail(), user.getAddress(), user.getPhonenumber(), user.getId());
+    }
+
+>>>>>>> markclone
 
     @Override
     public boolean deleteUser(User user) {
