@@ -1,4 +1,3 @@
-
 let submitButtom = document.getElementById("signup-button");
 
 submitButtom.addEventListener("click", (event)=> {
@@ -54,10 +53,54 @@ window.location.replace("index.html")
 };
 
 
-xhttp.open("POST",`http://localhost:8080/HoroscopeApp/signUp`)
+xhttp.open("POST",`http://localhost:8080/map/user`)
 
 xhttp.setRequestHeader("Content-Type","application/json");
 xhttp.setRequestHeader("Access-Control-Allow-Origin","*");
 xhttp.send(JSON.stringify(signupInfo));
 });
+
+
+
+
+
+
+
+// const container = document.
+// querySelector(".container");
+// querySelector(".green-bg-button");
+
+
+// signUpBtn.addEventListener('click',
+// () =>{
+//     container.classList.toggle("change")
+// ;
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
