@@ -36,9 +36,11 @@ public class UserController {
 
 *///Field testing explanation ending
 
+
     @Autowired
     private UserService userService;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -53,6 +55,10 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
+=======
+    @Autowired
+    private CartService cartService;
+>>>>>>> main
 =======
     @Autowired
     private CartService cartService;
