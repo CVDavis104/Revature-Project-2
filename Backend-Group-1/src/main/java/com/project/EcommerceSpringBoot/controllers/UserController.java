@@ -38,7 +38,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
-    public @ResponseBody User getUserById(@RequestParam int user_id) {return userService.getUserById(user_id);
+    public @ResponseBody User getById(@RequestParam int user_id) {
+        return userService.getUserById(user_id);
     }//getUserById method ending
 
     @PostMapping(value = "/user")

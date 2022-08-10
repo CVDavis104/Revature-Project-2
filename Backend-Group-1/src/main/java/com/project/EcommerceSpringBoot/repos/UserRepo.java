@@ -4,6 +4,7 @@ import com.project.EcommerceSpringBoot.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,10 +13,12 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserRepo extends JpaRepository<User,Integer> {
 
     //Used to create a new User
-    @Modifying//Might have to change return type to boolean
-    @Query(value = "UPDATE user_t SET user_name=?1, pass_word=?2, first_name=?3, last_name=?4, phone_number=?5, email=?6, address=?7, WHERE user_id=?8",nativeQuery = true)
-    public boolean updateUser(String user_name, String pass_word, String first_name, String last_name, String phone_number, String email, String address, int user_id);
+    @Modifying
+    @Query(value = "UPDATE user_t SET user_name=?1, pass_word=?2, first_name=?3, last_name=?4, phone_number=?5, email=?6, address=?7 WHERE user_id=?8", nativeQuery = true)
+    public int updateUser(String user_name, String pass_word, String first_name, String last_name, String phone_number, String email, String address, int user_id);
 
+//    @Query(value = "SELECT * FROM user_t WHERE user_id=?1", nativeQuery = true)
+//    public User getUserById(int user_id);
 
     /*The Spring Data module takes this simplification one step
 further by providing standard implementation for common DAO

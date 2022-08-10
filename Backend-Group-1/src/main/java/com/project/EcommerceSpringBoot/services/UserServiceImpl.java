@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -27,14 +28,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(int user_id) {
-        Optional<User> userSearch = userRepo.findById(user_id);
-            User user = userSearch.get();
+        try{
+            Optional<User> userTarget = userRepo.findById(user_id);
+            User user = userTarget.get();
             return user;
+        }//try block ending
+
+        catch(NoSuchElementException e){
+            System.out.println(e.getLocalizedMessage());
+        }//catch block ending
+
+        return null;
     }//getUserById method ending
 
     @Override
     public boolean updateUser(User user) {
-        return userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
+        int pk = userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
+            return (pk > 0) ? true: false;
     }//updateUser method ending
 
     @Override
