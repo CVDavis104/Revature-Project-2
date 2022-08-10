@@ -59,7 +59,7 @@ public class UserCartServiceImpl implements UserCartService {
         return ucRepo.insertPurchase(userCart.getUserid(), userCart.getProductid(),userCart.getProductqty());
 
     }
-
+///
 
     @Override
     public boolean deleteUserCart(UserCart userCart) {
