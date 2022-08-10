@@ -24,9 +24,7 @@ public interface ProductRepo extends JpaRepository<Product,Integer> {
         this.product_price = product_price;
         this.product_inventory = product_inventory;*/
 
-<<<<<<< HEAD
-///
-=======
+
     /*The Spring Data module takes this simplification one step
 further by providing standard implementation for common DAO
 methods allowing for the removal of the DAO implementation
@@ -54,4 +52,4 @@ Extending the CrudRepository should implement the following CRUD operations for 
      * values. Example of update method using @Query*/
 
 }/*ProductRepo interface ending*/
->>>>>>> main
+

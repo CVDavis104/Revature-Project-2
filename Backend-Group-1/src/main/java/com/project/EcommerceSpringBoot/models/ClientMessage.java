@@ -15,14 +15,9 @@ public class ClientMessage {
     }//getMessage method ending
 
     public void setMessage(String message) {
-<<<<<<< HEAD
-        Message = message;
+
+       this.message = message;
     }
 }
 ///
-=======
-        this.message = message;
-    }//setMessage method ending
 
-}/*ClientMessage class ending*/
->>>>>>> main

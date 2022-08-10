@@ -4,68 +4,62 @@ import com.project.EcommerceSpringBoot.models.User;
 import com.project.EcommerceSpringBoot.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepo uRepo;
 
     @Autowired
-    public UserServiceImpl(UserRepo userRepo){this.userRepo = userRepo;}
+    public UserServiceImpl(UserRepo uRepo) {
+        this.uRepo = uRepo;
+    }
 
     @Override
     public boolean createUser(User user) {
-        int pk = userRepo.save(user).getUser_id();
-            return (pk > 0) ? true: false;
-    }//Create User method ending
+        int pk = uRepo.save(user).getId();
+        return (pk > 0) ? true : false ;
+    }
 
     @Override
-    public User getUserById(int user_id) {
-        try{
-            Optional<User> userTarget = userRepo.findById(user_id);
-            User user = userTarget.get();
-            return user;
-        }//try block ending
-
-        catch(NoSuchElementException e){
-            System.out.println(e.getLocalizedMessage());
-        }//catch block ending
-
-        return null;
-    }//getUserById method ending
+    public User getUserById(int id) {
+        return uRepo.findById(id);
+    }
 
     @Override
-    public boolean updateUser(User user) {
-        int pk = userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
-            return (pk > 0) ? true: false;
-    }//updateUser method ending
-
-    @Override
-    public boolean deleteUser(User user) {
-        userRepo.delete(user);
-            return true;
-    }//deleteUser method ending
+    public User getUserByUser(String username, String password) {
+        return uRepo.findByUser(username, password);
+    }
 
     @Override
     public List<User> getAllUsers() {
-        return userRepo.findAll();
-    }//getAllUsers method ending
-
-    @Override // logging in
-    public User getByEmail(String email, String pass_word) {
-        return userRepo.findByEmail(email,pass_word);
+        return uRepo.findAll();
     }
-<<<<<<< HEAD
+
+    @Override
+    public int updateUser(User user) {
+        return uRepo.update(user.getUsername(), user.getPassword(), user.getFirstname(), user.getLastname(), user.getEmail(), user.getAddress(), user.getPhonenumber(), user.getId());
+    }
+
+
+    @Override
+    public boolean deleteUser(User user) {
+        uRepo.delete(user);
+        return true;
+    }
 }
 ////
-=======
 
-}/*UserServiceImpl class ending*/
->>>>>>> main
+
+
+
+
+
+
+
+
