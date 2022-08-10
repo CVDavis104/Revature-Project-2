@@ -1,24 +1,32 @@
 package com.project.EcommerceSpringBoot.services;
 
-
-
-
 import com.project.EcommerceSpringBoot.models.User;
-
 import java.util.List;
 
 public interface UserService {
 
+    //Creates a new user
     boolean createUser(User user);
 
-    User getUserById(int id);
+    //Get User by id
+    User getUserById(int user_id);
 
-    User getUserByUser(String username, String password);
+    //Updates a User
+    boolean updateUser(User user);
 
+    //Deletes a User
+    boolean deleteUser(User user);
+
+    //Get all Users
     List<User> getAllUsers();
 
-    int updateUser(User user);
+    // Logging in
+    User getByEmail(String email, String pass_word);
 
+<<<<<<< HEAD
     boolean deleteUser(User user);
 }
 ///
+=======
+}/*UserService interface ending*/
+>>>>>>> main
