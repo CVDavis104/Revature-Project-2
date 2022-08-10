@@ -66,7 +66,7 @@ if(user != null){ // user is logged in
     actionBtn.addEventListener('click', () => location.href = '/login.html');
 }
 
-const logout = () => {
+const  logout = () => {
     sessionStorage.clear()
     location.reload();
 }
@@ -83,13 +83,15 @@ searchBtn.addEventListener('click', () => {
 })
 
 // nav cart count
+let addToCartButton = document.getElementById('addtocart')
 
-const updateNavCartCounter = () => {
+addToCartButton.addEventListener('click', () => {
     let cartCounter = document.querySelector('.cart-item-count');
-
+    console.log(cartCounter)
     let cartItem = JSON.parse(localStorage.getItem('cart'));
+    console.log(cartItem)
 
-    if(cartItem == null){
+    if(cartItem == !null){
         cartCounter.innerHTML = '00';
     } else{
         if(cartItem.length > 9){
@@ -98,6 +100,6 @@ const updateNavCartCounter = () => {
             cartCounter.innerHTML = `0${cartItem.length}`
         }
     }
-}
+})
 
 updateNavCartCounter();

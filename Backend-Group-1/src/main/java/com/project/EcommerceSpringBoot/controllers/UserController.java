@@ -39,6 +39,18 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    private CartService cartService;
+
+    @PostMapping(value = "/userlogin", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public @ResponseBody User getUserByEmail(@RequestBody User user){
+        System.out.println(user);
+        String email = user.getEmail();
+        String pass_word = user.getPass_word();
+        System.out.println(email);
+        System.out.println(pass_word);
+        return userService.getByEmail(email, pass_word);
+    }
 
     @Autowired
     private CartService cartService;
@@ -47,6 +59,7 @@ public class UserController {
     public @ResponseBody User getById(@RequestParam int user_id) {
         return userService.getUserById(user_id);
     }//getUserById method ending
+
 
     @PostMapping(value = "/user")
     @ResponseStatus(HttpStatus.ACCEPTED)
