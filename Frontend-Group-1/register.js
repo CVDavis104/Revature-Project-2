@@ -9,13 +9,8 @@ let xhttp = new XMLHttpRequest
 let firstname = document.getElementById("firstName-input").value;
 let lastname = document.getElementById("lastName-input").value;
 let mobilenumber = document.getElementById("mobilenumber-input").value;
-let address = document.getElementById("address_input").value;
 let email = document.getElementById("email-input").value
-let username = document.getElementById("username-input").value;
 let password = document.getElementById("password-input").value;
-let country = document.getElementById("country-input").value;
-let State = document.getElementById("State-input").value;
-let zipcode = document.getElementById("Zaipcode-input").value;
 
 
 
@@ -29,12 +24,8 @@ let signupInfo = {
 firstname:firstname,
 lastname:lastname,
 mobilenumber: mobilenumber,
-address: address,
 email:email,
-zipcode: zipcode,
 password: password,
-country: country,
-State: State,
 
 
 
@@ -43,8 +34,7 @@ State: State,
 
 console.log(signupInfo);
 
-function add(){ address + State + country + zipcode;
-}
+
 
 xhttp.onreadystatechange = function(){
 

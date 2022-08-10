@@ -2,89 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Register</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store : Signup Here</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/form.css">
+
 </head>
 <body>
 
-<!-- <h2> Sign Up For A New Account</h2>
-<form>
-    <label> Enter Your First Name</label><br>
-    <input type="text" id="firstName-input"><br>
+    <img src="img/loading.gif" class="loader" alt="">
 
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form">
+                <h1 class="form-heading">new here? sign up here</h1>
+                <input type="text" autocomplete="off" id="name" placeholder="full name">
+                <input type="email" autocomplete="off" id="email" placeholder="email">
+                <input type="password" autocomplete="off" id="password" placeholder="password">
+                <input type="number" autocomplete="off" id="number" placeholder="phone number">
+                <span class="error">**this is an error</span>
 
-    <label> Enter Your Last Name</label><br>
-    <input type="text" id="lastName-input"><br>
-
-
-    <label> Enter Your Email</label><br>
-    <input type="text" id="email-input"><br>
-
-
-    <label> Create Username</label><br>
-    <input type="text" id="username-input"><br>
-
-
-    <label> Create Password</label><br>
-    <input type="text" id="password-input"><br>
-
-
-    <label> Enter Your Zodiac Sign</label><br>
-    <input type="text" id="zodiac_sign-input"><br>
-
-    <br> 
-    <br>
-
-    < <input type="submit" value="Submit Info!"> -->
-
-    <!-- <button id ="sign-up-button"> Submit Info </button>
-
-</form> -->
-
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Settings</h4>
+                <div>
+                    <input type="checkbox" id="tc"><label for="tc" class="tc-text">You agree to our <a href="#">terms and conditions</a></label>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name"></div>
-                </div>
-                <!-- this is our time\
-         ND ITS NIGGAS -->
-                <div class="row mt-3">
 
-                    <div class="col-md-12"><lablel class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                    <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter Postcode" value=""></div>
-                    <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter State" value=""></div>
-                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter country" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter email" value=""></div>
-                    
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
-            </div>S
-            <!-- my name is Fatmata Janga and i graduated from Sale3m Satet University with a bachelors in  psychology and a masters in  biology.
-            i have been passioniate about social wrelfare so this is a perfect job for me to show yall who i is,
-         i am a wbstack developer and i willdo frontend and backend. fuck with me youwant to This pus.  -->
-
-
-        </div>
-        <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
-                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+                <button class="submit-btn">sign up</button>
+                <a href="/login.html" class="other-form-link">Already have an account. Log in here</a>
             </div>
+            <img src="assets/action-figures-with-lights.jpg" class="form-img" alt="">
         </div>
-    </div>
-</div> 
+    </section>
+    
+    <script src="scripts/common.js"></script>
+    <script src="scripts/form.js"></script>
+
+</body>
+</html>
