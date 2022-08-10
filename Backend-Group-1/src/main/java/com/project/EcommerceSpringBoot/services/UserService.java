@@ -11,20 +11,13 @@ public interface UserService {
     //Get User by id
     User getUserById(int user_id);
 
-<<<<<<< HEAD
     User getUserByUser(String email, String password);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     //Updates a User
     boolean updateUser(User user);
-=======
     User getUserByUser(String email, String password);
->>>>>>> markclone
-=======
-    User getUserByUser(String email, String password);
->>>>>>> markclone
->>>>>>> 4dc3f6d654ebbafba889801aebc5451cb13d06ee
+
+    
 
     //Deletes a User
     boolean deleteUser(User user);

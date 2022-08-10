@@ -42,18 +42,11 @@ public class UserServiceImpl implements UserService {
     }//getUserById method ending
 
     @Override
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
     public boolean updateUser(User user) {
         int pk = userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
             return (pk > 0) ? true: false;
     }//updateUser method ending
-=======
-=======
->>>>>>> markclone
->>>>>>> 4dc3f6d654ebbafba889801aebc5451cb13d06ee
+
     public User getUserByUser(String email, String password) {
         return uRepo.findByUser(email, password);
     }
@@ -68,22 +61,6 @@ public class UserServiceImpl implements UserService {
         return uRepo.update(user.getUsername(), user.getPassword(), user.getFirstname(), user.getLastname(), user.getEmail(), user.getAddress(), user.getPhonenumber(), user.getId());
     }
 
->>>>>>> markclone
 
-    @Override
-    public boolean deleteUser(User user) {
-        userRepo.delete(user);
-            return true;
-    }//deleteUser method ending
-
-    @Override
-    public List<User> getAllUsers() {
-        return userRepo.findAll();
-    }//getAllUsers method ending
-
-    @Override // logging in
-    public User getByEmail(String email, String pass_word) {
-        return userRepo.findByEmail(email,pass_word);
-    }
 
 }/*UserServiceImpl class ending*/

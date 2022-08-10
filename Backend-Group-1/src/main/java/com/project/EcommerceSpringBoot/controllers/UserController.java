@@ -18,25 +18,6 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
 public class UserController {
 
-     /* Fields for testing the User in Postman
-
-         {
-         "user_id": int,
-         "user_name": String,
-         "pass_word": String,
-         "first_name": String,
-         "last_name": String,
-         "email": String,
-         "address": String,
-         "phone_number": String
-         }
-
-//Example HTTP link for testing
-//http://localhost:8080/[RequestMapping]/[MethodMapping]?user_name=[exampleName]&pass_word=[examplePassword]
-
-*///Field testing explanation ending
-
-
     @Autowired
     private UserService userService;
     private CartService cartService;
@@ -52,10 +33,6 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody User getById(@RequestParam int user_id) {
@@ -81,26 +58,7 @@ public class UserController {
         return userService.deleteUser(user) && cartService.deleteCart(cart) ? DELETION_SUCCESSFUL : DELETION_FAILED;
     }//deleteUser method ending
 
-    @GetMapping("/userLogin")
-    public @ResponseBody User getByUser(@RequestParam String username, String password) {
-        return userService.getUserByUser(username, password);
-        //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
-=======
-=======
->>>>>>> markclone
->>>>>>> 4dc3f6d654ebbafba889801aebc5451cb13d06ee
-    @PostMapping("/userLogin")
-    public @ResponseBody User getByUser(@RequestParam String email, String password) {
-        return userService.getUserByUser(email, password);
-        //http://localhost:8080/api/userLogin?email=cpearcy&password=cpearcy
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> markclone
-=======
->>>>>>> markclone
->>>>>>> 4dc3f6d654ebbafba889801aebc5451cb13d06ee
-    }
+  
 
     @GetMapping("/users")
     public @ResponseBody List<User> getAll(){
