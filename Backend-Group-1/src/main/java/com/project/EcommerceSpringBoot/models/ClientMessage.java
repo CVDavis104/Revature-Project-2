@@ -15,7 +15,16 @@ public class ClientMessage {
     }//getMessage method ending
 
     public void setMessage(String message) {
+<<<<<<< HEAD
         this.message = message;
     }//setMessage method ending
 
 }/*ClientMessage class ending*/
+=======
+
+       this.message = message;
+    }
+}
+///
+
+>>>>>>> markclone

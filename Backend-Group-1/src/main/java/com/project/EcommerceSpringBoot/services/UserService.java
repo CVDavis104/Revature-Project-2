@@ -23,4 +23,22 @@ public interface UserService {
     // Logging in
     User getByEmail(String email, String pass_word);
 
+<<<<<<< HEAD
 }/*UserService interface ending*/
+=======
+    boolean deleteUser(User user);
+}
+///
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> markclone

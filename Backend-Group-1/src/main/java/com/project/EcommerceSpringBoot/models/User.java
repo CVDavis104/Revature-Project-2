@@ -66,8 +66,14 @@ public class User {
         this.last_name = last_name;
         this.email = email;
         this.address = address;
+<<<<<<< HEAD
         this.phone_number = phone_number;
     }//User signup constructor ending
+=======
+        this.phonenumber = phonenumber;
+//        this.usercartid = user cartid;
+    }
+>>>>>>> markclone
 
     //All args constructor
     public User(int user_id, String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number, Cart user_cart_rel) {
@@ -78,17 +84,23 @@ public class User {
         this.last_name = last_name;
         this.email = email;
         this.address = address;
+<<<<<<< HEAD
         this.phone_number = phone_number;
         this.user_cart_rel = user_cart_rel;
     }//All args constructor ending
 
     public int getUser_id() {
         return user_id;
+=======
+        this.phonenumber = phonenumber;
+        //      this.usercartid = usercartid;
+>>>>>>> markclone
     }
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
+<<<<<<< HEAD
 
     public String getUser_name() {
         return user_name;
@@ -154,3 +166,6 @@ public class User {
         this.user_cart_rel = user_cart_rel;
     }
 }/*User class ending*/
+=======
+}
+>>>>>>> markclone

@@ -53,3 +53,8 @@ Extending the CrudRepository should implement the following CRUD operations for 
 }/*UserRepo interface ending*/
 
 
+<<<<<<< HEAD
+=======
+}
+///
+>>>>>>> markclone

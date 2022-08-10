@@ -53,6 +53,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public boolean deleteProduct(Product product) {
+<<<<<<< HEAD
         productRepo.delete(product);
         return true;
     }//Delete Product method ending
@@ -60,3 +61,9 @@ public class ProductServiceImpl implements ProductService{
 
 
 }/*ProductServiceImpl class ending*/
+=======
+        return false;
+    }
+}
+////
+>>>>>>> markclone

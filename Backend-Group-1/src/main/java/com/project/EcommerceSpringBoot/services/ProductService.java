@@ -19,5 +19,10 @@ public interface ProductService {
     List<Product> getAllProducts();
 
     boolean deleteProduct(Product product);
+<<<<<<< HEAD
 
 }/*ProductService interface ending*/
+=======
+}
+///
+>>>>>>> markclone
