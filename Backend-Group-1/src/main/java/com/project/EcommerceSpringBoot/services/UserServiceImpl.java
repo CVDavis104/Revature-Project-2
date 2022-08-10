@@ -43,11 +43,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
 <<<<<<< HEAD
+<<<<<<< HEAD
     public boolean updateUser(User user) {
         int pk = userRepo.updateUser(user.getUser_name(), user.getPass_word(), user.getFirst_name(), user.getLast_name(), user.getPhone_number(), user.getEmail(), user.getAddress(), user.getUser_id());
             return (pk > 0) ? true: false;
     }//updateUser method ending
 =======
+=======
+>>>>>>> markclone
     public User getUserByUser(String email, String password) {
         return uRepo.findByUser(email, password);
     }
