@@ -56,7 +56,7 @@ let text = userPopupIcon.querySelector('p');
 let actionBtn = userPopupIcon.querySelector('a');
 let user = JSON.parse(sessionStorage.user || null);
 
-if(user != null){ // user is logged in
+if(localStorage != null){ // user is logged in
     text.innerHTML = `log in as, ${user.email}`;
     actionBtn.innerHTML = 'log out';
     actionBtn.addEventListener('click', () => logout());

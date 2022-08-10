@@ -43,11 +43,12 @@ async function loginUser(event){
       console.log(raw_response)
       console.log(content);
       localStorage.setItem('currentUser' , JSON.stringify(content));
+      console.log(localStorage)
       alert('Successfully logged in!')
       window.location.replace("index.html");
     }catch(error){
       console.log(error)
       alert('Invalid username and password!')
     }
-   
+   console.log(localStorage)
 };
