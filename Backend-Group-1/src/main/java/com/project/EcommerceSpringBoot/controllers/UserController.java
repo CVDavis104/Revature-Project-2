@@ -1,6 +1,8 @@
 package com.project.EcommerceSpringBoot.controllers;
 import com.project.EcommerceSpringBoot.models.ClientMessage;
 import com.project.EcommerceSpringBoot.models.User;
+import com.project.EcommerceSpringBoot.models.Cart;
+import com.project.EcommerceSpringBoot.services.CartService;
 import com.project.EcommerceSpringBoot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,17 +36,36 @@ public class UserController {
 
 *///Field testing explanation ending
 
+
     @Autowired
     private UserService userService;
+    private CartService cartService;
+
+    @PostMapping(value = "/userlogin", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public @ResponseBody User getUserByEmail(@RequestBody User user){
+        System.out.println(user);
+        String email = user.getEmail();
+        String pass_word = user.getPass_word();
+        System.out.println(email);
+        System.out.println(pass_word);
+        return userService.getByEmail(email, pass_word);
+    }
+
+    @Autowired
+    private CartService cartService;
 
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
-    public @ResponseBody User getUserById(@RequestParam int user_id) {return userService.getUserById(user_id);
+    public @ResponseBody User getById(@RequestParam int user_id) {
+        return userService.getUserById(user_id);
     }//getUserById method ending
+
 
     @PostMapping(value = "/user")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public @ResponseBody ClientMessage createUser(@RequestBody User user){
-        return userService.createUser(user) ? CREATION_SUCCESSFUL : CREATION_FAILED;
+        Cart cart = new Cart();
+        return userService.createUser(user) && cartService.createCart(cart) ? CREATION_SUCCESSFUL : CREATION_FAILED;
     }//createUser method ending
 
     @PutMapping("/user")
@@ -54,7 +75,8 @@ public class UserController {
 
     @DeleteMapping("/user")
     public @ResponseBody ClientMessage deleteUser(@RequestBody User user){
-        return userService.deleteUser(user) ? DELETION_SUCCESSFUL : DELETION_FAILED;
+        Cart cart = new Cart();
+        return userService.deleteUser(user) && cartService.deleteCart(cart) ? DELETION_SUCCESSFUL : DELETION_FAILED;
     }//deleteUser method ending
 
     @GetMapping("/users")

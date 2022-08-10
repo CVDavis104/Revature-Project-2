@@ -1,8 +1,11 @@
 package com.project.EcommerceSpringBoot.controllers;
 import com.project.EcommerceSpringBoot.models.Cart;
 import com.project.EcommerceSpringBoot.models.ClientMessage;
+import com.project.EcommerceSpringBoot.models.Product;
 import com.project.EcommerceSpringBoot.models.User;
 import com.project.EcommerceSpringBoot.services.CartService;
+import com.project.EcommerceSpringBoot.services.ProductService;
+import com.project.EcommerceSpringBoot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +27,7 @@ public class CartController {
          "cart_product_id": int,
          "product_quantity": int
          }
+
 //Example HTTP link for testing
 //http://localhost:8080/[RequestMapping]/[MethodMapping]?user_name=[exampleName]&pass_word=[examplePassword]
 
@@ -32,11 +36,20 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private UserService userService;
+
     @PostMapping("/cart")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public @ResponseBody ClientMessage createCart(@RequestBody Cart cart){
+//        Product product = new Product();
+        User user = new User();
         return cartService.createCart(cart) ? CREATION_SUCCESSFUL : CREATION_FAILED;
     }//createCart method ending
+
     //{
 //        "userid":1,
 //        "productid":1,
@@ -45,7 +58,8 @@ public class CartController {
 
     @PutMapping("/cart")
     public @ResponseBody ClientMessage updateCart(@RequestBody Cart cart){
-        return cartService.updateCart(cart) ? UPDATE_SUCCESSFUL : UPDATE_FAILED;
+            Product product = new Product();
+        return cartService.updateCart(cart) && productService.updateProduct(product) ? UPDATE_SUCCESSFUL : UPDATE_FAILED;
 //                "id":4,
 //                "userid":2,
 //                "productid":5,

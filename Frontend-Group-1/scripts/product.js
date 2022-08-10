@@ -33,8 +33,8 @@
 //     })
 //     .catch(err => {
 //         console.log(err)
-//         // alert('no product found');
-//         // location.replace('/404.html');
+        // alert('no product found');
+        // location.replace('/404.html');
 //     })
 // }
 
@@ -59,10 +59,3 @@ document.querySelectorAll('.products-container .product').forEach(product =>{
     });
   };
 });
-
-// previewBox.forEach(close =>{
-//   close.querySelector('.fa-times').onclick = () =>{
-//     close.classList.remove('active');
-//     preveiwContainer.style.display = 'none';
-//   };
-// });
