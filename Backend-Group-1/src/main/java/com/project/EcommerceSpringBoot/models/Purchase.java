@@ -12,11 +12,11 @@ public class Purchase {
     @Column(name = "purchase_id")
     private int purchase_id;//Points to the purchase_id
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_purchase_rel", referencedColumnName = "user_id")
     private User user_purchase_rel;//Pointing to the user that is making the purchases
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "purchase_product_rel",  referencedColumnName = "product_id")
     private Product purchase_product_rel;//Points to the products in this cart
 
