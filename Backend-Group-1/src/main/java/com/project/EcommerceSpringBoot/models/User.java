@@ -38,6 +38,7 @@ public class User {
     private String phone_number;//Points to a users phone number
 
     @OneToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "user_cart_rel", referencedColumnName = "cart_id")//...pointing to the cart the user makes
     private Cart user_cart_rel;//Points to the user accounts cart id
 
