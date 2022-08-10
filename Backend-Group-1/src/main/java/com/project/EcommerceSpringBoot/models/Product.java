@@ -46,7 +46,4 @@ public class Product {
 
 }/*Products class ending*/
 
-<<<<<<< HEAD
-=======
-}
->>>>>>> markclone
+

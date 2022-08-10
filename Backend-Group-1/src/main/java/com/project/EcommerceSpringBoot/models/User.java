@@ -66,14 +66,11 @@ public class User {
         this.last_name = last_name;
         this.email = email;
         this.address = address;
-<<<<<<< HEAD
         this.phone_number = phone_number;
     }//User signup constructor ending
-=======
-        this.phonenumber = phonenumber;
-//        this.usercartid = user cartid;
-    }
->>>>>>> markclone
+
+    
+
 
     //All args constructor
     public User(int user_id, String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number, Cart user_cart_rel) {
@@ -84,88 +81,13 @@ public class User {
         this.last_name = last_name;
         this.email = email;
         this.address = address;
-<<<<<<< HEAD
         this.phone_number = phone_number;
         this.user_cart_rel = user_cart_rel;
     }//All args constructor ending
 
-    public int getUser_id() {
-        return user_id;
-=======
-        this.phonenumber = phonenumber;
-        //      this.usercartid = usercartid;
->>>>>>> markclone
-    }
+   
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-<<<<<<< HEAD
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
-
-    public String getPass_word() {
-        return pass_word;
-    }
-
-    public void setPass_word(String pass_word) {
-        this.pass_word = pass_word;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone_number() {
-        return phone_number;
-    }
-
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
-    }
-
-    public Cart getUser_cart_rel() {
-        return user_cart_rel;
-    }
-
-    public void setUser_cart_rel(Cart user_cart_rel) {
-        this.user_cart_rel = user_cart_rel;
-    }
+   
 }/*User class ending*/
-=======
-}
->>>>>>> markclone
+
+

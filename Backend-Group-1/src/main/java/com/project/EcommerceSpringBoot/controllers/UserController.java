@@ -52,9 +52,6 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
-<<<<<<< HEAD
-    @Autowired
-    private CartService cartService;
 
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody User getById(@RequestParam int user_id) {
@@ -79,39 +76,20 @@ public class UserController {
         Cart cart = new Cart();
         return userService.deleteUser(user) && cartService.deleteCart(cart) ? DELETION_SUCCESSFUL : DELETION_FAILED;
     }//deleteUser method ending
-=======
+
     @GetMapping("/userLogin")
     public @ResponseBody User getByUser(@RequestParam String username, String password) {
         return userService.getUserByUser(username, password);
         //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
     }
->>>>>>> markclone
 
     @GetMapping("/users")
     public @ResponseBody List<User> getAll(){
         return userService.getAllUsers();
     }//getAllUsers method ending
 
-<<<<<<< HEAD
+
 }/*UserController Class ending*/
-=======
-    @PostMapping("/user")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public @ResponseBody ClientMessage createUser(@RequestBody User user){
-        return userService.createUser(user) ? CREATION_SUCCESSFUL : CREATION_FAILED;
-    }
-
-    @PutMapping("/user")
-    public @ResponseBody ClientMessage updateUser(@RequestBody User user){
-        return userService.updateUser(user) > 0 ? UPDATE_SUCCESSFUL:UPDATE_FAILED;
-    }
-
-    @DeleteMapping("/user")
-    public @ResponseBody ClientMessage deleteUser(@RequestBody User user){
-        return userService.deleteUser(user) ? DELETION_SUCCESSFUL : DELETION_FAILED;
-    }
-
-}
 
 // {
 //         "id": 1,
@@ -145,12 +123,3 @@ public class UserController {
 //         }
 //
 
-
-
-
-
-
-
-
-
->>>>>>> markclone

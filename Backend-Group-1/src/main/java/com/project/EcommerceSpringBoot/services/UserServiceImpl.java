@@ -62,22 +62,5 @@ public class UserServiceImpl implements UserService {
     public User getByEmail(String email, String pass_word) {
         return userRepo.findByEmail(email,pass_word);
     }
-<<<<<<< HEAD
 
 }/*UserServiceImpl class ending*/
-=======
-}
-////
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> markclone
