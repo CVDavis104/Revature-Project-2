@@ -11,10 +11,23 @@ import java.util.List;
 import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/map")
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
-
 public class ProductController {
+
+/* Fields for testing the Product in Postman
+
+         {
+         "product_id": int,
+         "product_name": String,
+         "product_price": double,
+         "product_inventory": int,
+         }
+
+//Example HTTP link for testing
+//http://localhost:8080/[RequestMapping]/[MethodMapping]?user_name=[exampleName]&pass_word=[examplePassword]
+
+*///Field testing explanation ending
 
     @Autowired
     private ProductService productService;
@@ -28,6 +41,7 @@ public class ProductController {
     @GetMapping("/products")
     public @ResponseBody List<Product> getAll(){
         return productService.getAllProducts();
+
     }
 
     @PostMapping("/product")
@@ -38,14 +52,21 @@ public class ProductController {
 
     @PutMapping("/product")
     public @ResponseBody ClientMessage updateProduct(@RequestBody Product product){
-        return productService.updateProduct(product) > 0 ? UPDATE_SUCCESSFUL : UPDATE_FAILED;
+        return productService.updateProduct(product) ? UPDATE_SUCCESSFUL : UPDATE_FAILED;
     }
 
     @DeleteMapping("/product")
     public @ResponseBody ClientMessage deleteProduct(@RequestBody Product product){
         return productService.deleteProduct(product) ? DELETION_SUCCESSFUL : DELETION_FAILED;
     }
-}
+
+    @GetMapping("/products")
+    public @ResponseBody List<Product> getAll(){
+        return productService.getAllProducts();
+    }
+
+
+}/*ProductController class ending*/
 
 // {
 
@@ -73,3 +94,4 @@ public class ProductController {
 //         "price": 200.0,
 //         "invcount": 120
 //         }
+

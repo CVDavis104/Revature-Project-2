@@ -1,55 +1,48 @@
 package com.project.EcommerceSpringBoot.repos;
 
 import com.project.EcommerceSpringBoot.models.Product;
+<<<<<<< HEAD
+import com.project.EcommerceSpringBoot.models.User;
+=======
 import com.project.EcommerceSpringBoot.models.UserCart;
+>>>>>>> CVDavis104
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
-@Transactional
 @Repository
+<<<<<<< HEAD
+@Transactional
+public interface CartRepo extends JpaRepository<Cart,Integer> {
+=======
 public interface CartRepo extends JpaRepository<UserCart,Integer> {
+>>>>>>> CVDavis104
 
-    //Used to update our cart
-    @Query(value = "UPDATE cart_t SET cart_product=?1 WHERE cart_id=?2",nativeQuery = true)
-    public boolean updateCart(List<Product> products, int cart_id);
+    //Used to update our Cart with Products
+    @Modifying
+    @Query(value = "UPDATE cart_t SET cart_user_rel=?1, cart_product_id=?2, product_quantity=?3 WHERE cart_id=?4", nativeQuery = true)
+    public boolean updateCart(User cart_user_rel, Product cart_product_id,  int product_quantity, int cart_id);
 
-    //Used to delete specific products from a cart
-//    @Query(value = "DELETE * FROM cart_t WHERE cart_product=?1 AND cart_id=?2",nativeQuery = true)
-//    public Integer deleteFromCart(List<Product> products,int cart_id);
+    //Used to update the Product Quantity in our Cart
+    @Modifying//Might have to add cart_product_id into SQL statement and parameters
+    @Query(value = "UPDATE cart_t SET product_quantity=?1 WHERE cart_id=?2", nativeQuery = true)
+    public int updateCartProductsQuantity(int product_quantity, int cart_id);
 
-    //Used to select all products from a cart
-//    @Query(value = "SELECT * FROM cart_t WHERE cart_id=?1",nativeQuery = true)
-//    public Cart findCartById(int cart_id);
+    //Used to find a Cart by its id
+    @Query(value = "SELECT * FROM cart_t WHERE cart_id=?1", nativeQuery = true)
+    public Cart findCartById(int cart_id);
 
-    /*The Spring Data module takes this simplification one step
-further by providing standard implementation for common DAO
-methods allowing for the removal of the DAO implementation
-and only requiring the definition of the DAO interface methods.
+    //Used to find a Cart by its User
+    @Query(value = "SELECT * FROM cart_t WHERE cart_user_rel=?1", nativeQuery = true)
+    public List<Cart> findCartByUser(User cart_user_rel);
 
-In order to leverage the Spring Data programming model with JPA,
-a DAO interface should extend the Spring JpaRepository interface
-from the org.springframework.data.jpa.repository package.
-
-Extending the CrudRepository should implement the following CRUD operations for us:
-    save()
-    saveAll()
-    findById()
-    existsById()
-    findAll()
-    findAllById()
-    count()
-    deleteById()
-    delete()
-    deleteAll()
-*/
-
-    /*When we are using the @Query annotation, we have to add the
-     * wildcard (?) with  param numbers that indicate the index of
-     * values. Example of update method using @Query*/
-
+    //Used to insert purchases into our purchase table
+//    @Modifying
+//    @Query(value = "INSERT INTO purchase_t (user_purchase_rel,purchase_product_rel,product_quantity) VALUES (?1, ?2, ?3)", nativeQuery = true)
+//    public int insertPurchase(User user_purchase_rel, Product purchase_product_rel, int product_quantity);
 
 }/*CartRepo interface ending*/
