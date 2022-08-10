@@ -2,9 +2,7 @@ package com.project.EcommerceSpringBoot.services;
 
 import com.project.EcommerceSpringBoot.models.User;
 import com.project.EcommerceSpringBoot.models.UserCart;
-import com.project.EcommerceSpringBoot.models.UserPurchases;
 import com.project.EcommerceSpringBoot.repos.UserCartRepo;
-import com.project.EcommerceSpringBoot.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

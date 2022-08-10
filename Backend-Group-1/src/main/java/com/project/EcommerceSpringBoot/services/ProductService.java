@@ -10,16 +10,12 @@ public interface ProductService {
 
     boolean createProduct(Product product);
 
-    boolean updateProduct(Product product);
-
-    Product updateProductInventory(Product product);
-
-    Product getProductById(int product_id);
+    Product  getProductById(int id);
 
     List<Product> getAllProducts();
 
-    boolean deleteProduct(Product product);
+    int updateProduct(Product product);
 
+    boolean deleteProduct(Product product);
 }
 ///
-
