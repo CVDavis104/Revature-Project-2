@@ -20,7 +20,7 @@ const createNavbar = () => {
             <li class="link-item"><a href="/product.html" class="link">products</a></li>
             <li class="link-item"><a href="#" class="link">about</a></li>
             <li class="link-item"><a href="#" class="link">contact</a></li>
-            <li class="link-item"><a href="#" class="link">profile</a></li>
+            <li class="link-item"><a href="/profile.html" class="link">profile</a></li>
         </ul>
         <div class="user-interactions">
             <div class="search-box">
@@ -57,7 +57,7 @@ let actionBtn = userPopupIcon.querySelector('a');
 let user = JSON.parse(sessionStorage.user || null);
 
 if(user != null){ // user is logged in
-    text.innerHTML = `log in as, ${user.name}`;
+    text.innerHTML = `log in as, ${user.email}`;
     actionBtn.innerHTML = 'log out';
     actionBtn.addEventListener('click', () => logout());
 } else{

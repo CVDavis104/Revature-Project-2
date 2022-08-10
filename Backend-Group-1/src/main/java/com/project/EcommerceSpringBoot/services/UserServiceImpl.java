@@ -58,4 +58,9 @@ public class UserServiceImpl implements UserService {
         return userRepo.findAll();
     }//getAllUsers method ending
 
+    @Override // logging in
+    public User getByEmail(String email, String pass_word) {
+        return userRepo.findByEmail(email,pass_word);
+    }
+
 }/*UserServiceImpl class ending*/

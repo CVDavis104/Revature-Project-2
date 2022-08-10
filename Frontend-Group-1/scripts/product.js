@@ -59,19 +59,3 @@ document.querySelectorAll('.products-container .product').forEach(product =>{
     });
   };
 });
-
-previewBox.forEach(close =>{
-  close.querySelector('.fa-times').onclick = () =>{
-    close.classList.remove('active');
-    preveiwContainer.style.display = 'none';
-  };
-});
-
-var noti = document.querySelector('h3');
-var select = document.querySelector('.select');
-var button = document.querySelector('button');
-for (but of button){
-    but.addEventListener('click', (e) => {
-        var add = Number(noti.getAttribute('data'))
-    })
-}

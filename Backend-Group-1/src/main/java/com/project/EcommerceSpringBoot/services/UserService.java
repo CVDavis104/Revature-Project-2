@@ -20,4 +20,7 @@ public interface UserService {
     //Get all Users
     List<User> getAllUsers();
 
+    // Logging in
+    User getByEmail(String email, String pass_word);
+
 }/*UserService interface ending*/

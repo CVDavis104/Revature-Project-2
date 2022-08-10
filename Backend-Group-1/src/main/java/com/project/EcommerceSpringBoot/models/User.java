@@ -16,19 +16,19 @@ public class User {
     @Column(name = "user_id")
     private int user_id;//Points to the user id
 
-    @Column(name = "user_name", unique = true, nullable = false)
+    @Column(name = "user_name")
     private String user_name;//Points to the username
 
-    @Column(name = "pass_word",  nullable = false)
+    @Column(name = "pass_word", nullable = true)
     private String pass_word;//Points to the password
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String first_name;//Points to a users first name
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String last_name;//Points to a users last name
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;//Points to a users email
 
     @Column(name = "address")
@@ -51,10 +51,12 @@ public class User {
     }//User id constructor ending
 
     //User login constructor
-    public User(String user_name, String pass_word) {
-        this.user_name = user_name;
+    public User(String email, String pass_word) {
+        this.email = email;
         this.pass_word = pass_word;
     }//User login constructor ending
+
+
 
     //User signup constructor
     public User(String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number) {
@@ -80,4 +82,75 @@ public class User {
         this.user_cart_rel = user_cart_rel;
     }//All args constructor ending
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public String getPass_word() {
+        return pass_word;
+    }
+
+    public void setPass_word(String pass_word) {
+        this.pass_word = pass_word;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public Cart getUser_cart_rel() {
+        return user_cart_rel;
+    }
+
+    public void setUser_cart_rel(Cart user_cart_rel) {
+        this.user_cart_rel = user_cart_rel;
+    }
 }/*User class ending*/

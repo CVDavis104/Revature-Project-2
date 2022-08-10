@@ -15,24 +15,27 @@
 </head>
 <body>
 
-    <img src="img/loading.gif" class="loader" alt="">
+
 
     <section class="form-section">
         <div class="form-container">
             <div class="form">
-                <h1 class="form-heading">new here? sign up here</h1>
-                <input type="text" autocomplete="off" id="name" placeholder="full name">
+                <form>
+                <h1 class="form-heading">NEW HERE? SIGN UP HERE</h1>
+                <input type="text" autocomplete="off" id="address-signup" placeholder="full address eX. 911 Cop Street, Leer MN, 51234">
+                <input type="text" autocomplete="off" id="fname" placeholder="first name">
+                <input type="text" autocomplete="off" id="lname" placeholder="last name">
                 <input type="email" autocomplete="off" id="email" placeholder="email">
                 <input type="password" autocomplete="off" id="password" placeholder="password">
                 <input type="number" autocomplete="off" id="number" placeholder="phone number">
                 <span class="error">**this is an error</span>
+                </form>
+               
 
-                <div>
-                    <input type="checkbox" id="tc"><label for="tc" class="tc-text">You agree to our <a href="#">terms and conditions</a></label>
-                </div>
-
-                <button class="submit-btn">sign up</button>
-                <a href="/login.html" class="other-form-link">Already have an account. Log in here</a>
+                <button class="submit-btn" id="sign-up-btn">sign up</button>
+                <a href="/login.html" class="other-form-link">Already have an account? Log in here</a>
+                <br>
+                <a href="/index.html" class="other-form-link">Homepage</a>
             </div>
             <img src="assets/action-figures-with-lights.jpg" class="form-img" alt="">
         </div>
