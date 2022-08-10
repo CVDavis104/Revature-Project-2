@@ -15,9 +15,9 @@ public class ClientMessage {
     }//getMessage method ending
 
     public void setMessage(String message) {
+        this.message = message;
+    }//setMessage method ending
 
-       this.message = message;
-    }
-}
-///
+}/*ClientMessage class ending*/
+
 
