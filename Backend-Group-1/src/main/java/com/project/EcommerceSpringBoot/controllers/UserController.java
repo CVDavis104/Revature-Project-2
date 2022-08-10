@@ -26,10 +26,10 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @GetMapping("/userLogin")
-    public @ResponseBody User getByUser(@RequestParam String username, String password) {
-        return userService.getUserByUser(username, password);
-        //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
+    @PostMapping("/userLogin")
+    public @ResponseBody User getByUser(@RequestParam String email, String password) {
+        return userService.getUserByUser(email, password);
+        //http://localhost:8080/api/userLogin?email=cpearcy&password=cpearcy
     }
 
     @GetMapping("/users")
