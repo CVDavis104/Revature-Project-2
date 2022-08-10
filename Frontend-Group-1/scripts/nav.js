@@ -61,7 +61,7 @@ if(user != null){ // user is logged in
     actionBtn.innerHTML = 'log out';
     actionBtn.addEventListener('click', () => logout());
 } else{
-    text.innerHTML = 'login to your account';
+    text.innerHTML  = 'login to your account';
     actionBtn.innerHTML = 'login';
     actionBtn.addEventListener('click', () => location.href = '/login.html');
 }
