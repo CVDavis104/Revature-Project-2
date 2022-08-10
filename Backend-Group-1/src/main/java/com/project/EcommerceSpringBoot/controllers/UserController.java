@@ -40,6 +40,7 @@ public class UserController {
     private UserService userService;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     @PostMapping(value = "/userlogin", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -52,6 +53,10 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
+=======
+    @Autowired
+    private CartService cartService;
+>>>>>>> main
 =======
     @Autowired
     private CartService cartService;
