@@ -16,7 +16,7 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
 public class CartController {
 
-    
+
 /* Fields for testing the Cart in Postman
 
          {
