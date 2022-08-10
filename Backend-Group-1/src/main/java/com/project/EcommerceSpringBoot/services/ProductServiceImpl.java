@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService{
     }//Create a Product method ending
 
     @Override
-    public int updateProduct(Product product) {
+    public boolean updateProduct(Product product) {
         return productRepo.updateProduct(product.getProduct_name(), product.getProduct_price(), product.getProduct_inventory(), product.getProduct_id());
     }//Update a Product method ending
 

@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ProductRepo extends JpaRepository<Product,Integer> {
     @Modifying
     @Query(value = "UPDATE product_t SET product_name=?1, product_price=?2, product_inventory=?3 WHERE product_id=?4", nativeQuery = true)
-    public int updateProduct(String product_name, double product_price, int product_inventory, int product_id);
+    public boolean updateProduct(String product_name, double product_price, int product_inventory, int product_id);
 
     @Modifying
     @Query(value = "UPDATE product_t SET product_inventory=?1 WHERE product_id=?2", nativeQuery = true)

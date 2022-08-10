@@ -7,16 +7,17 @@ import javax.persistence.*;
 @Data
 @Table(name = "cart_t")
 public class Cart {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")
     private int cart_id;//Points to the cart id
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_user_rel", referencedColumnName = "user_id")
     private User cart_user_rel;//Points to the user who made this cart
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_product_id",  referencedColumnName = "product_id")
     private Product cart_product_id;//Points to the products in this cart
 
