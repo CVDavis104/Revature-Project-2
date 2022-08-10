@@ -3,7 +3,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-
 @Entity
 @Data
 @Table(name = "product_t")
@@ -31,14 +30,14 @@ public class Product {
     }//product_inventory constructor ending
 
     //Product most args constructor
-    public Product(String product_name, double product_price, String product_description, int product_inventory, Cart cart_products) {
+    public Product(String product_name, double product_price, int product_inventory, Cart cart_products) {
         this.product_name = product_name;
         this.product_price = product_price;
         this.product_inventory = product_inventory;
     }//Product most args constructor ending
 
     //All args constructor
-    public Product(int product_id, String product_name, double product_price, String product_description, int product_inventory, Cart cart_products) {
+    public Product(int product_id, String product_name, double product_price, int product_inventory, Cart cart_products) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.product_price = product_price;

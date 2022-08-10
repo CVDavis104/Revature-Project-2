@@ -15,6 +15,20 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 @RequestMapping("/map")
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
 public class CartController {
+
+/* Fields for testing the Cart in Postman
+
+         {
+         "cart_id": int,
+         "cart_user_rel": int,
+         "cart_product_id": int,
+         "product_quantity": int
+         }
+//Example HTTP link for testing
+//http://localhost:8080/[RequestMapping]/[MethodMapping]?user_name=[exampleName]&pass_word=[examplePassword]
+
+*///Field testing explanation ending
+
     @Autowired
     private CartService cartService;
 
@@ -66,17 +80,10 @@ public class CartController {
         return cartService.findAllUserCarts();
     }//getAll method ending
 
-//    @PostMapping("/cartPurchases")
-//    @ResponseStatus(HttpStatus.ACCEPTED)
-//    public @ResponseBody ClientMessage createPurchase(@RequestBody Cart cart) {
-//        return cartService.createPurchase(cart) > 0 ? CREATION_SUCCESSFUL : CREATION_FAILED;
-//        {
 //                "userid":1,       //this field will be added to the purchase table
 //                "productid":1,    //this field will be added to the purchase table
 //                "productqty":10,  //this field will be added to the purchase table
 //                "id":1  //need to add the the user cart id so record can be deleted
-//        }
-//    }
 
 }/*CartController class ending*/
 

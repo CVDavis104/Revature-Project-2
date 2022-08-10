@@ -16,6 +16,24 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
 public class UserController {
 
+     /* Fields for testing the User in Postman
+
+         {
+         "user_id": int,
+         "user_name": String,
+         "pass_word": String,
+         "first_name": String,
+         "last_name": String,
+         "email": String,
+         "address": String,
+         "phone_number": String
+         }
+
+//Example HTTP link for testing
+//http://localhost:8080/[RequestMapping]/[MethodMapping]?user_name=[exampleName]&pass_word=[examplePassword]
+
+*///Field testing explanation ending
+
     @Autowired
     private UserService userService;
 
@@ -43,38 +61,5 @@ public class UserController {
     public @ResponseBody List<User> getAll(){
         return userService.getAllUsers();
     }//getAllUsers method ending
-
-    //http://localhost:8080/api/userLogin?user_name=exampleName&pass_word=examplePassword
-
-// {
-//         "id": 1,
-//         "username": "gpearcy",
-//         "password": "gpearcy",
-//         "firstname": "Gerald",
-//         "lastname": "Pearcy",
-//         "email": "gpearcy@aol.com",
-//         "address": "7 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-0000"
-//         },
-//         {
-//         "id": 2,
-//         "username": "mpearcy",
-//         "password": "mpearcy",
-//         "firstname": "Gerald",
-//         "lastname": "Pearcy",
-//         "email": "mpearcy@aol.com",
-//         "address": "5 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-4444"
-//         },
-//         {
-//         "id": 3,
-//         "username": "cpearcy",
-//         "password": "cpearcy",
-//         "firstname": "Gerald",
-//         "lastname": "Pearcy",
-//         "email": "cpearcy@aol.com",
-//         "address": "5 ButterCup Lane, Flower TX 77777",
-//         "phonenumber": "281-777-5555"
-//         }
 
 }/*UserController Class ending*/

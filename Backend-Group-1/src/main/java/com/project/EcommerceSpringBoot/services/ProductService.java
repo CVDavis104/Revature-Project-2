@@ -19,4 +19,5 @@ public interface ProductService {
     List<Product> getAllProducts();
 
     boolean deleteProduct(Product product);
+
 }/*ProductService interface ending*/

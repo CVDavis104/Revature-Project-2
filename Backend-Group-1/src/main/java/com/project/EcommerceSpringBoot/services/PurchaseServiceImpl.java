@@ -44,4 +44,9 @@ public class PurchaseServiceImpl implements PurchaseService {
         return purchaseRepo.findAll();
     }//getAllPurchases method ending
 
+    @Override
+    public Purchase getTotalPriceByUser(Purchase purchase) {
+        return purchaseRepo.getTotalPriceByUser(purchase.getPurchase_price(),purchase.getUser_purchase_rel());
+    }//gotTotalPrice method ending
+
 }/*PurchaseServiceImpl class ending*/

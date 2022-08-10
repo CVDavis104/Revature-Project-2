@@ -25,13 +25,7 @@ public interface PurchaseRepo extends JpaRepository<Purchase,Integer> {
     @Query(value = "UPDATE purchase_t SET purchase_quantity=?1 WHERE user_purchase_rel=?2",nativeQuery = true)
     public boolean updatePurchaseQuantityByUser(int purchase_quantity, User user_purchase_rel);
 
-    @Query(value = "SELECT * FROM purchase_t WHERE purchase_price=?1",nativeQuery = true)
-    public double gotTotalPrice(double purchase_price);
-
-    /*       this.purchase_id = purchase_id;
-        this.user_purchase_rel = user_purchase_rel;
-        this.purchase_product_rel = purchase_product_rel;
-        this.purchase_quantity = purchase_quantity;
-        this.purchase_price = purchase_price;*/
+    @Query(value = "SELECT * FROM purchase_t WHERE purchase_price=?1 AND user_purchase_rel=?2",nativeQuery = true)
+    public Purchase getTotalPriceByUser(double purchase_price,User user_purchase_rel);
 
 }/*PurchaseRepo interface ending*/

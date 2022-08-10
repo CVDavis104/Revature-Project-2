@@ -17,4 +17,6 @@ public interface PurchaseService {
 
     List<Purchase> getAllPurchases();
 
+    Purchase getTotalPriceByUser(Purchase purchase);
+
 }/*PurchaseService interface ending*/
