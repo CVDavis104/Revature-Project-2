@@ -33,8 +33,15 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/product")
-    public @ResponseBody Product getById(@RequestParam int product_id) {
-        return productService.getProductById(product_id);
+    public @ResponseBody Product getById(@RequestParam int id) {
+        return productService.getProductById(id);
+    }
+    
+
+    @GetMapping("/products")
+    public @ResponseBody List<Product> getAll(){
+        return productService.getAllProducts();
+
     }
 
     @PostMapping("/product")
