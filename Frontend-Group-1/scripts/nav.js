@@ -54,10 +54,10 @@ userIcon.addEventListener('click', () => userPopupIcon.classList.toggle('active'
 
 let text = userPopupIcon.querySelector('p');
 let actionBtn = userPopupIcon.querySelector('a');
-let user = JSON.parse(sessionStorage.user || null);
+let user = JSON.parse(localStorage.user || null);
 
-if(localStorage != null){ // user is logged in
-    text.innerHTML = `log in as, ${user.email}`;
+if(user != null){ // user is logged in
+    text.innerHTML = `log in as, ${user}`;
     actionBtn.innerHTML = 'log out';
     actionBtn.addEventListener('click', () => logout());
 } else{
@@ -67,7 +67,7 @@ if(localStorage != null){ // user is logged in
 }
 
 const logout = () => {
-    sessionStorage.clear()
+    localStorage.clear()
     location.reload();
 }
 
