@@ -66,7 +66,7 @@ if(user != null){ // user is logged in
     actionBtn.addEventListener('click', () => location.href = '/login.html');
 }
 
-const logout = () => {
+const  logout = () => {
     sessionStorage.clear()
     location.reload();
 }
