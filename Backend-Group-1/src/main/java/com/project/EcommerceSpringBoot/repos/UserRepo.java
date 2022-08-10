@@ -21,7 +21,10 @@ public interface UserRepo extends JpaRepository<User,Integer> {
     @Query(value = "SELECT * FROM user_t WHERE email=?1 AND pass_word=?2", nativeQuery = true)
     User findByEmail(String email, String pass_word);
 
-<<<<<<< HEAD
+
+    @Query(value = "SELECT * FROM e_users WHERE u_email=?1 AND u_password=?2", nativeQuery = true)
+    public User findByUser(String u_email, String u_password);
+
 //    @Query(value = "SELECT * FROM user_t WHERE user_id=?1", nativeQuery = true)
 //    public User getUserById(int user_id);
 
@@ -53,13 +56,4 @@ Extending the CrudRepository should implement the following CRUD operations for 
 
 }/*UserRepo interface ending*/
 
-<<<<<<< HEAD
-=======
-    @Query(value = "SELECT * FROM e_users WHERE u_email=?1 AND u_password=?2", nativeQuery = true)
-    public User findByUser(String u_email, String u_password);
->>>>>>> markclone
-=======
-    @Query(value = "SELECT * FROM e_users WHERE u_email=?1 AND u_password=?2", nativeQuery = true)
-    public User findByUser(String u_email, String u_password);
->>>>>>> markclone
 
