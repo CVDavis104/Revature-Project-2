@@ -23,6 +23,7 @@ public class ProductController {
     public @ResponseBody Product getById(@RequestParam int id) {
         return productService.getProductById(id);
     }
+    
 
     @GetMapping("/products")
     public @ResponseBody List<Product> getAll(){
