@@ -62,11 +62,7 @@ public class ProductController {
 }/*ProductController class ending*/
 
 // {
-//         "id": 1,
-//         "name": "Peter From Family Guy",
-//         "price": 100.0,
-//         "invcount": 90
-//         },
+
 //         {
 //         "id": 2,
 //         "name": "Venom",

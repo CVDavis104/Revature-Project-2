@@ -19,6 +19,7 @@ public interface ProductRepo extends JpaRepository<Product,Integer> {
     @Query(value = "UPDATE product_t SET product_inventory=?1 WHERE product_id=?2", nativeQuery = true)
     public Product updateProductInventory(int product_inventory, int product_id);
 
+<<<<<<< HEAD
     /*this.product_id = product_id;
         this.product_name = product_name;
         this.product_price = product_price;
@@ -52,3 +53,10 @@ Extending the CrudRepository should implement the following CRUD operations for 
      * values. Example of update method using @Query*/
 
 }/*ProductRepo interface ending*/
+=======
+    @Query(value = "SELECT * FROM products WHERE p_id=?1", nativeQuery = true)
+    public Product findById(int id);
+}
+
+///
+>>>>>>> CVDavis104

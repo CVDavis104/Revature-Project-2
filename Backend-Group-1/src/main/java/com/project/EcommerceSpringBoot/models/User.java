@@ -57,6 +57,7 @@ public class User {
     }//User login constructor ending
 
 
+<<<<<<< HEAD
 
     //User signup constructor
     public User(String user_name, String pass_word, String first_name, String last_name, String email, String address, String phone_number) {
@@ -89,5 +90,40 @@ public class User {
 
    
 }/*User class ending*/
+=======
+    public User() {
+    }
+>>>>>>> CVDavis104
 
 
+<<<<<<< HEAD
+=======
+    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.phonenumber = phonenumber;
+//        this.usercartid = user cartid;
+    }
+
+    public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        //      this.usercartid = usercartid;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+}
+>>>>>>> CVDavis104

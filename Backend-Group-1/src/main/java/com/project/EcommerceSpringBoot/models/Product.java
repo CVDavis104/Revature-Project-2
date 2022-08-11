@@ -29,6 +29,7 @@ public class Product {
         this.product_inventory = product_inventory;
     }//product_inventory constructor ending
 
+<<<<<<< HEAD
     //Product most args constructor
     public Product(String product_name, double product_price, int product_inventory, Cart cart_products) {
         this.product_name = product_name;
@@ -45,5 +46,21 @@ public class Product {
     }//All args constructor ending
 
 }/*Products class ending*/
+=======
+    public Product(int id) {
+        this.id = id;
+    }
+
+    public Product(String name, double price, int invcount) {
+        this.name = name;
+        this.price = price;
+        this.invcount = invcount;
+    }
+>>>>>>> CVDavis104
 
 
+<<<<<<< HEAD
+=======
+}
+
+>>>>>>> CVDavis104

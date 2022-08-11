@@ -1,8 +1,11 @@
 package com.project.EcommerceSpringBoot.repos;
 
-import com.project.EcommerceSpringBoot.models.Cart;
 import com.project.EcommerceSpringBoot.models.Product;
+<<<<<<< HEAD
 import com.project.EcommerceSpringBoot.models.User;
+=======
+import com.project.EcommerceSpringBoot.models.UserCart;
+>>>>>>> CVDavis104
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,8 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
+<<<<<<< HEAD
 @Transactional
 public interface CartRepo extends JpaRepository<Cart,Integer> {
+=======
+public interface CartRepo extends JpaRepository<UserCart,Integer> {
+>>>>>>> CVDavis104
 
     //Used to update our Cart with Products
     @Modifying
