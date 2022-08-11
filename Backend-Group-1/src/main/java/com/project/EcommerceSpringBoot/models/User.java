@@ -74,8 +74,10 @@ public class User {
 //        this.balance = balance;
     }
 
-    public User(String username, String password) {
-        this.username = username;
+    public User(String email, String password) {
+        this.email = email;
         this.password = password;
     }
+
+
 }

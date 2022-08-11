@@ -5,6 +5,7 @@ import com.project.EcommerceSpringBoot.models.User;
 import com.project.EcommerceSpringBoot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,6 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(allowedHeaders = "Access-Control-Allow-Origin", origins = {"*"})
-
 public class UserController {
 
 
@@ -26,11 +26,33 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @GetMapping("/userLogin")
-    public @ResponseBody User getByUser(@RequestParam String username, String password) {
-        return userService.getUserByUser(username, password);
-        //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
+    @PostMapping(value = "/userLogin", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public @ResponseBody User getByEmail(@RequestBody User user){
+        System.out.println(user);
+        String email = user.getEmail();
+        String password = user.getPassword();
+        System.out.println(email);
+        System.out.println(password);
+        return userService.getByEmail(email, password);
     }
+
+    @PutMapping(value="/userupdate", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ClientMessage updateUser(@RequestBody User user){
+        System.out.println(user);
+        System.out.println("id: " + user.getId());
+        System.out.println("email: " +  user.getEmail());
+        System.out.println("username: " + user.getUsername() );
+        System.out.println("password: " + user.getPassword());
+        System.out.println("last: " + user.getLastname() );
+        System.out.println("first: " + user.getFirstname());
+        return userService.updateUser(user) > 0 ? UPDATE_SUCCESSFUL:UPDATE_FAILED;
+    }
+//    @PostMapping("/userLogin")
+//    public @ResponseBody User getByEmail(@RequestBody String email, String password) {
+//        return userService.getByEmail(email, password);
+//        //http://localhost:8080/api/userLogin?username=cpearcy&password=cpearcy
+//    }
 
     @GetMapping("/users")
     public @ResponseBody List<User> getAll(){
@@ -43,10 +65,6 @@ public class UserController {
         return userService.createUser(user) ? CREATION_SUCCESSFUL : CREATION_FAILED;
     }
 
-    @PutMapping("/user")
-    public @ResponseBody ClientMessage updateUser(@RequestBody User user){
-        return userService.updateUser(user) > 0 ? UPDATE_SUCCESSFUL:UPDATE_FAILED;
-    }
 
     @DeleteMapping("/user")
     public @ResponseBody ClientMessage deleteUser(@RequestBody User user){
