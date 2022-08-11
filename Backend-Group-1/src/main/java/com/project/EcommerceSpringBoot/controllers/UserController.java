@@ -37,12 +37,10 @@ public class UserController {
         return userService.getByEmail(email, pass_word);
     }
 
-
     @GetMapping(value = "/user", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody User getById(@RequestParam int user_id) {
         return userService.getUserById(user_id);
     }//getUserById method ending
-
 
     @PostMapping(value = "/user")
     @ResponseStatus(HttpStatus.ACCEPTED)
