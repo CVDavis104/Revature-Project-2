@@ -20,7 +20,7 @@ const createNavbar = () => {
             <li class="link-item"><a href="/product.html" class="link">products</a></li>
             <li class="link-item"><a href="#" class="link">about</a></li>
             <li class="link-item"><a href="#" class="link">contact</a></li>
-            <li class="link-item"><a href="#" class="link">profile</a></li>
+            <li class="link-item"><a href="profile.html" class="link">profile</a></li>
         </ul>
         <div class="user-interactions">
             <div class="search-box">
@@ -52,12 +52,18 @@ let userPopupIcon = document.querySelector('.user-icon-popup');
 
 userIcon.addEventListener('click', () => userPopupIcon.classList.toggle('active'))
 
+
 let text = userPopupIcon.querySelector('p');
 let actionBtn = userPopupIcon.querySelector('a');
-let user = JSON.parse(sessionStorage.user || null);
+let userStorage = localStorage.getItem('currentUser')
 
-if(user != null){ // user is logged in
-    text.innerHTML = `log in as, ${user.name}`;
+// Navbar to show that user is logged in 
+if(user = userStorage){ // user is logged in
+    let userStorage = localStorage.getItem('currentUser')
+    let user = JSON.parse(userStorage);
+    console.log(user)
+    text.innerHTML = `logged in as, ${user.firstname}`;
+    console.log(text.innerHTML)
     actionBtn.innerHTML = 'log out';
     actionBtn.addEventListener('click', () => logout());
 } else{
@@ -66,9 +72,10 @@ if(user != null){ // user is logged in
     actionBtn.addEventListener('click', () => location.href = '/login.html');
 }
 
-const  logout = () => {
-    sessionStorage.clear()
+const logout = () => {
+    localStorage.clear()
     location.reload();
+    alert('You have logged out!')
 }
 
 // search box
@@ -83,15 +90,16 @@ searchBtn.addEventListener('click', () => {
 })
 
 // nav cart count
-let addToCartButton = document.getElementById('addtocart')
 
-addToCartButton.addEventListener('click', () => {
+const updateNavCartCounter = () => {
     let cartCounter = document.querySelector('.cart-item-count');
     console.log(cartCounter)
     let cartItem = JSON.parse(localStorage.getItem('cart'));
     console.log(cartItem)
+    let cartButton = document.getElementById('addtocart')
+    console.log(cartButton)
 
-    if(cartItem == !null){
+    if(cartItem == null){
         cartCounter.innerHTML = '00';
     } else{
         if(cartItem.length > 9){
@@ -100,6 +108,6 @@ addToCartButton.addEventListener('click', () => {
             cartCounter.innerHTML = `0${cartItem.length}`
         }
     }
-})
+}
 
 updateNavCartCounter();

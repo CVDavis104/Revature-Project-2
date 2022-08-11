@@ -9,16 +9,19 @@ signUpButton.addEventListener("click", (event) => {
     let first_name = document.getElementById("fname").value
     let last_name = document.getElementById("lname").value
     let email = document.getElementById("email").value
+    let username = document.getElementById('username').value
     let password = document.getElementById("password").value
     let phone = document.getElementById("number").value
 
     let signupInfo = {
-        address: address,
-        first_name: first_name,
-        last_name: last_name, 
+
+        firstname: first_name,
+        lastname: last_name, 
         email: email,
+        username: username,
         password: password,
-        phone: phone
+        phonenumber: phone,
+        address: address
         
     }
     console.log(signupInfo);
@@ -37,11 +40,14 @@ signUpButton.addEventListener("click", (event) => {
         }
     };
 
-    xhttp.open("POST",`http://localhost:8080/map/user`);
+    xhttp.open("POST",`http://localhost:8080/api/user`);
 
     xhttp.setRequestHeader("Content-Type","application/json");
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 
     xhttp.send(JSON.stringify(signupInfo));
+    
+    window.location.replace('login.html')
+    // alert('Account created successfully')
 
 });
