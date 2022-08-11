@@ -26,15 +26,16 @@ public class UserServiceImpl implements UserService{
         return (pk > 0) ? true : false ;
     }
 
+    public User getByEmail(String email, String password) {
+        return uRepo.findByEmail(email, password);
+    }
+
+
     @Override
     public User getUserById(int id) {
         return uRepo.findById(id);
     }
 
-    @Override
-    public User getUserByUser(String username, String password) {
-        return uRepo.findByUser(username, password);
-    }
 
     @Override
     public List<User> getAllUsers() {
