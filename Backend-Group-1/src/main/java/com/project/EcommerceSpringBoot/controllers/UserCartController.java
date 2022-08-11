@@ -31,6 +31,7 @@ public class UserCartController {
         return userCartService.getUserCartByUser(userid);
         //http://localhost:8080/api/usercartUser?userid=1
     }
+
     @GetMapping("/usercarts")
     public @ResponseBody List<UserCart> getAll(){
         return userCartService.getAllUserCarts();
@@ -81,5 +82,4 @@ public class UserCartController {
         return userCartService.deleteUserCart(userCart) ? DELETION_SUCCESSFUL : DELETION_FAILED;
     }
 }
-
-
+///

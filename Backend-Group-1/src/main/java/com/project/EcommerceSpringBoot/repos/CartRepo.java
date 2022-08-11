@@ -1,7 +1,7 @@
 package com.project.EcommerceSpringBoot.repos;
 
-import com.project.EcommerceSpringBoot.models.Cart;
 import com.project.EcommerceSpringBoot.models.Product;
+import com.project.EcommerceSpringBoot.models.UserCart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface CartRepo extends JpaRepository<Cart,Integer> {
+public interface CartRepo extends JpaRepository<UserCart,Integer> {
 
     //Used to update our cart
     @Query(value = "UPDATE cart_t SET cart_product=?1 WHERE cart_id=?2",nativeQuery = true)

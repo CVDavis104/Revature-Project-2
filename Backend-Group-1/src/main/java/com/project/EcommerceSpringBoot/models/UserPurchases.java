@@ -26,7 +26,6 @@ public class UserPurchases {
     @Column(name = "up_checkout")
     private boolean checkout;
 
-
     public UserPurchases() {
     }
 
