@@ -18,7 +18,7 @@ async function loginUser(event){
 
         let loginBody = {
             email:email,
-            pass_word:password
+            password:password
         };
         console.log(loginBody)
 
@@ -26,12 +26,12 @@ async function loginUser(event){
         console.log(JsonLoginBody)
 
     try{
-        const raw_response = await fetch(`http://localhost:8080/map/userlogin`, 
+        const raw_response = await fetch(`http://localhost:8080/api/userLogin`, 
             {
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
-                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Origin": "*"
             },
              body:JsonLoginBody
         });
@@ -50,5 +50,5 @@ async function loginUser(event){
       console.log(error)
       alert('Invalid username and password!')
     }
-   console.log(localStorage)
+
 };
