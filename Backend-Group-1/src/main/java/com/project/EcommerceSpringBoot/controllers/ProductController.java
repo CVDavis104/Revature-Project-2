@@ -1,6 +1,7 @@
 package com.project.EcommerceSpringBoot.controllers;
 import com.project.EcommerceSpringBoot.models.ClientMessage;
 import com.project.EcommerceSpringBoot.models.Product;
+import com.project.EcommerceSpringBoot.models.UserCart;
 import com.project.EcommerceSpringBoot.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,11 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @GetMapping("/products")
+    public @ResponseBody List<Product> getAll(){
+        return productService.getAllProducts();
+    }
 
     @GetMapping("/product")
     public @ResponseBody Product getById(@RequestParam int id) {
