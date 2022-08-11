@@ -1,10 +1,8 @@
 package com.project.EcommerceSpringBoot.controllers;
-import com.project.EcommerceSpringBoot.models.ClientMessage;
-import com.project.EcommerceSpringBoot.models.Product;
-import com.project.EcommerceSpringBoot.models.User;
-import com.project.EcommerceSpringBoot.models.UserCart;
+import com.project.EcommerceSpringBoot.models.*;
 import com.project.EcommerceSpringBoot.services.ProductService;
 import com.project.EcommerceSpringBoot.services.UserCartService;
+import com.project.EcommerceSpringBoot.services.UserPurchasesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +18,9 @@ import static com.project.EcommerceSpringBoot.utils.ClientMessageUtil.*;
 public class UserCartController {
     @Autowired
     private UserCartService userCartService;
+
+    @Autowired
+    private UserPurchasesService userPurchasesService;
 
     @GetMapping("/usercart")
     public @ResponseBody UserCart getById(@RequestParam int id) {
@@ -65,7 +66,12 @@ public class UserCartController {
 //                "productqty":18
     }
 
-
+    @PutMapping("/checkout")
+    public @ResponseBody ClientMessage updateByCheckout(@RequestBody boolean checkout, int id) {
+        return userPurchasesService.getByCheckout(checkout, id) ? UPDATE_SUCCESSFUL : UPDATE_FAILED;
+//                "id":4,
+//                "productqty":18
+    }
 
     @PutMapping("/usercart")
     public @ResponseBody ClientMessage updateUserCart(@RequestBody UserCart userCart){
