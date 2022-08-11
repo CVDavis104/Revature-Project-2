@@ -37,6 +37,8 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    
+
     @PostMapping("/user")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public @ResponseBody ClientMessage createUser(@RequestBody User user){
