@@ -37,6 +37,9 @@ public class User {
     @Column(name = "u_phonenumber")
     private String phonenumber;
 
+//    @Column(name = "u_balance")
+//    private double balance;
+
 //    @OneToOne
 //    @JoinColumn(name = "usercart_id", referencedColumnName = "uc_id")//...pointing to the cart the user makes
 //    private UserCart usercartid;
@@ -57,7 +60,6 @@ public class User {
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
-//        this.usercartid = user cartid;
     }
 
     public User(int id, String username, String password, String firstname, String lastname, String email, String address, String phonenumber) {
@@ -69,7 +71,7 @@ public class User {
         this.email = email;
         this.address = address;
         this.phonenumber = phonenumber;
-        //      this.usercartid = usercartid;
+//        this.balance = balance;
     }
 
     public User(String username, String password) {

@@ -51,5 +51,10 @@ public class UserPurchases {
     public UserPurchases(User userid) {
         this.userid = userid;
     }
+
+    public UserPurchases(int id, boolean checkout) {
+        this.id = id;
+        this.checkout = checkout;
+    }
 }
 //
