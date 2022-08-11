@@ -1,7 +1,5 @@
 package com.project.EcommerceSpringBoot.services;
 
-import com.project.EcommerceSpringBoot.models.Cart;
-import com.project.EcommerceSpringBoot.models.Product;
 import com.project.EcommerceSpringBoot.models.User;
 
 import java.util.List;

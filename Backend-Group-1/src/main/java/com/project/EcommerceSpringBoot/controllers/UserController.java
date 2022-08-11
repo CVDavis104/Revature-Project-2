@@ -1,7 +1,6 @@
 package com.project.EcommerceSpringBoot.controllers;
 import com.project.EcommerceSpringBoot.models.ClientMessage;
 import com.project.EcommerceSpringBoot.models.User;
-import com.project.EcommerceSpringBoot.models.Cart;
 import com.project.EcommerceSpringBoot.services.CartService;
 import com.project.EcommerceSpringBoot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
